@@ -7,7 +7,7 @@
 
 <body id="page-top">
 
-    <div class="content" id="content">
+    <div class="content">
 
         <!-- Topbar -->
         <?php $this->load->view('partials/users/navbar') ?>

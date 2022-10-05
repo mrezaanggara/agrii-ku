@@ -9,6 +9,7 @@
 
 <!-- Custom styles for this template-->
 <link href="<?php echo base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet">
 
 <!-- Custom styles for this page -->
 <link href="<?php echo base_url('assets/vendor/datatables/datatables.min.css') ?>" type="text/css" rel="stylesheet" />

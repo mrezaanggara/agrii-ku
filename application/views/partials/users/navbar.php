@@ -1,7 +1,7 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color:#20B2AA">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#20B2AA" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand text-white"><?php echo SITE_NAME; ?></a>
+        <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>"><?php echo SITE_NAME; ?></a>
         <form class="ml-md-3 navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" style="box-shadow:none">
@@ -14,51 +14,22 @@
         </form>
         <ul class="navbar-nav">
 
-            <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link dropdown-toggle text-white small" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item">
+                <a class="nav-link text-white small" href="<?php echo base_url('cart'); ?>">
                     <i class="fas fa-cart-shopping fa-fw" style="color: white"></i>
                     Keranjang
                 </a>
-                <!-- Dropdown - cart -->
-                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="cartDropdown">
-                    <h6 class="dropdown-header" style="background-color:#20B2AA ;border-color:#20B2AA">
-                        Keranjang Belanja
-                    </h6>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                            <div class="icon-circle bg-primary">
-                                <i class="fas fa-file-alt text-white"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="small text-gray-500">December 12, 2019</div>
-                            <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                            <div class="icon-circle bg-success">
-                                <i class="fas fa-donate text-white"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="small text-gray-500">December 7, 2019</div>
-                            $290.29 has been deposited into your account!
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                            <div class="icon-circle bg-warning">
-                                <i class="fas fa-exclamation-triangle text-white"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="small text-gray-500">December 2, 2019</div>
-                            Spending Alert: We've noticed unusually high spending for your account.
-                        </div>
-                    </a>
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white small" href="<?php echo base_url('article'); ?>">
+                    <i class="fa-solid fa-newspaper fa-fw" style="color: white"></i>
+                    Artikel
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white small" href="<?php echo base_url('about_us'); ?>">
+                    About us
+                </a>
             </li>
 
             <div class="topbar-divider d-none d-sm-block"></div>

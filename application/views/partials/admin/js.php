@@ -10,4 +10,4 @@
 
 <!-- Page level plugins -->
 <script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js') ?>"></script>
-<script type="text/javascript" src="assets/vendor/datatables/dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/vendor/datatables/dataTables.min.js') ?>"></script>

@@ -7,30 +7,15 @@
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+    <!-- Main Content -->
+    <div id="content">
 
-        <!--sidebar.php -->
+        <!--navbar.php -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!--navbar.php -->
-
-                <!--content -->
-            </div>
-
-            <!--footer.php -->
-
-
-        </div>
-        <!-- End of Content Wrapper -->
-
+        <!--content -->
     </div>
-    <!-- End of Page Wrapper -->
+
+    <!--footer.php -->
 
     <!--scrolltop.php -->
     <!--modal.php -->

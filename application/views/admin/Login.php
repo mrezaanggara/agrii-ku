@@ -34,7 +34,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block">
-                                <img class="rounded" src="<?php echo base_url('data/loginpage.jpg') ?>" height="400" width="460">
+                                <img class="rounded" src="<?php echo base_url('data/store.jpg') ?>" height="400" width="460">
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">

@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller
 	{
 		$this->load->model('carouselModel');
 		$data = [
-			'title' => 'Dashboard',
+			'title' => 'Agrii-ku | Dashboard',
 		];
 		$data['carousel'] = $this->carouselModel->getCarousel();
 		$this->load->view('users/dashboard', $data);

@@ -6,7 +6,7 @@ class About_us extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Dashboard',
+            'title' => 'Agrii-ku | About us',
         ];
         $this->load->view('users/about-us', $data);
     }

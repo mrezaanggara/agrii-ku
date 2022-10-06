@@ -10,4 +10,12 @@ class Produk extends CI_Controller
         ];
         $this->load->view('admin/produk/listproduk', $data);
     }
+
+    public function addProduct()
+    {
+        $data = [
+            'title' => 'Tambah Produk | Agrii-ku',
+        ];
+        $this->load->view('admin/produk/tambahproduk', $data);
+    }
 }

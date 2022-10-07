@@ -27,26 +27,14 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col">
                             <div class="card shadow mb-4">
                                 <div class="card-header">
                                     <h6 class="m-0 font-weight-bold text-primary">Form tambah produk</h6>
                                 </div>
-                                <form name="form" id="form" onchange="perview()">
+                                <form name="form" id="form">
 
                                     <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="gambar">Gambar dan Video Produk</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" name="gambar[]" class="custom-file-input" id="gambar" accept="image/video/*" multiple onchange="perview_image()">
-                                                    <label class=" custom-file-label gambar" for="gambar">Pilih File..</label>
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text bg-danger text-white" onclick="remove()">Remove</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="form-group">
                                             <label for="namaProduk">Nama Produk</label>
                                             <input type="text" class="form-control" id="namaProduk" placeholder="Nama Produk">
@@ -58,6 +46,30 @@
                                                     <span class="input-group-text">Rp.</span>
                                                 </div>
                                                 <input type="number" min="0" class="form-control" id="hargaProduk" placeholder="0">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="kategoriProduk">Kategori Produk</label>
+                                                    <select class="form-control" aria-label="Default select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="jenisProduk">Jenis Produk</label>
+                                                    <select class="form-control" aria-label="Default select example">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -128,6 +140,28 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="gambar">Gambar Produk</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" name="gambar" class="custom-file-input-gambar" id="gambar" accept="image/*" multiple>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="video">Video Produk</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" name="video" class="custom-file-input-video" id="video" accept="video/*" multiple>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="check">
                                             <label class="form-check-label" for="exampleCheck1">Saya sudah yakin dengan data ini</label>
@@ -138,18 +172,6 @@
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card shadow mb-4">
-                                <div class="card-header">
-                                    <h6 class="m-0 font-weight-bold text-primary">Perview data</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-center" id="gambarview"></div>
-                                    <hr>
-                                    <div id="tampil"></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -170,45 +192,6 @@
 
 </body>
 <script type="text/javascript">
-    $(".custom-file-input").on("change", function() {
-        var numFiles = $("input:file")[0].files.length;
-        if (numFiles > 3) {
-            alert('gambar max 3');
-            return false;
-        }
-        $(this).siblings(".custom-file-label").addClass("selected").html(numFiles + " File Selected..");
-    });
-
-    function remove() {
-        const element = document.getElementById("imgs");
-        element.remove();
-    }
-
-    function perview() {
-        var total_file = document.getElementById("gambar").files.length;
-        for (var i = 0; i < total_file; i++) {
-            $('#gambarview').append("<img id='imgs' src='" + URL.createObjectURL(event.target.files[i]) + "' height='300' width='300'><br>");
-        }
-        var nama = document.getElementById("namaProduk").value;
-        var harga = document.getElementById("hargaProduk").value;
-        var stok = document.getElementById("stokProduk").value;
-        var berat = document.getElementById("beratProduk").value;
-        var deskripsi = document.getElementById("deskripsi").value;
-        var panjang = document.getElementById("panjang").value;
-        var lebar = document.getElementById("lebar").value;
-        var tinggi = document.getElementById("tinggi").value;
-        var tampil = document.getElementById("tampil");
-        tampil.innerHTML =
-            'Nama Produk : ' + nama + '<br><hr>' +
-            'Harga Produk : Rp. ' + harga + '<br><hr>' +
-            'Stok : ' + stok + ' Pcs<br><hr>' +
-            'Berat : ' + berat + ' Kg<br><hr>' +
-            'Deskripsi : <br>' + deskripsi + '<br><hr>' +
-            'panjang : ' + panjang + ' cm <br><hr>' +
-            'lebar : ' + lebar + ' cm <br><hr>' +
-            'tinggi : ' + tinggi + ' cm <br>';
-    }
-
     const checkbox = document.getElementById('check')
 
     checkbox.addEventListener('change', (event) => {

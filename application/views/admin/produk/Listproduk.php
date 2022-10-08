@@ -66,7 +66,7 @@
                                                         adaa
                                                     </td>
                                                     <td>
-                                                        <a type="button" href="<?php echo site_url("produk/detail/") ?>" class="btn btn-sm btn-success">
+                                                        <a type="button" href="<?php echo site_url("admin/produk/detailproduct"); ?>" class="btn btn-sm btn-success">
                                                             <i class="fas fa-info"></i>
                                                         </a>
                                                         <a type="button" class="btn btn-sm btn-danger" href="">

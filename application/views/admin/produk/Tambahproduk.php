@@ -98,12 +98,12 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="form-label-group">
-                                                <label for="deskripsi">Deskripsi barang</label>
+                                                <label for="deskripsi">Deskripsi Produk</label>
                                                 <textarea class="form-control" id="deskripsi" placeholder=""></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="dimensiBarang">Dimensi Barang</label>
+                                            <label for="dimensiBarang">Dimensi Produk</label>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">

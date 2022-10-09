@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#20B2AA" id="navbar">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#20B2AA; z-index: 15;" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>"><?php echo SITE_NAME; ?></a>
         <form class="ml-md-3 navbar-search">

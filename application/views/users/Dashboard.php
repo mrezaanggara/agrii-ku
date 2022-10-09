@@ -8,7 +8,7 @@
 <body>
 
     <div class="splash" id="splash">
-        <h2 class="fade-in">Agribisnis</h2>
+        <h2 class="fade-in">Agrii-KU</h2>
     </div>
 
     <!-- Main Content -->
@@ -18,10 +18,12 @@
 
         <!--content -->
         <div class="container">
+
+            <!-- banner iklan -->
             <div class="row">
                 <div class="col">
                     <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <ol class="carousel-indicators">
+                        <ol class="carousel-indicators" style="z-index: 1;">
                             <?php
                             foreach ($carousel as $key => $value) {
                                 if ($key == 0) { ?>
@@ -57,9 +59,11 @@
                 </div>
             </div>
         </div>
+        <!-- end banner iklan -->
 
         <br>
 
+        <!-- kategori produk -->
         <div class="container">
             <h5 class="h5 mb-2 text-gray-800">Kategori Produk</h5>
             <div class="row">
@@ -105,132 +109,185 @@
                 </div>
             </div>
         </div>
+        <!-- end kategori produk -->
 
         <br>
 
+        <!-- swiper produk terbaru -->
         <div class="container">
             <h5 class="h5 mb-2 text-gray-800 bold">Produk Terbaru</h5>
-            <div class="row">
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="<?php echo base_url('shop/'); ?>">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Bayam</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Brokoli</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Strawberry</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
+                    <div class="swiper-button-next swiper-pb"></div>
+                    <div class="swiper-button-prev swiper-pb"></div>
                 </div>
             </div>
         </div>
+        <!-- end swiper produk terbaru -->
 
         <div class="container">
             <hr class="divider">
         </div>
 
+        <!-- swiper produk terlaris -->
         <div class="container">
             <h5 class="h5 mb-2 text-gray-800 bold">Produk Terlaris</h5>
-            <div class="row">
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="<?php echo base_url('shop/'); ?>">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Bayam</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Brokoli</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Strawberry</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="card  swiper-slide">
+                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a class="text-gray-800" href="">Apel Merah</a>
+                                </h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Produk -->
-                <div class="col-xl-2 col-md-6 mb-4">
-                    <div class="card">
-                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" height="200">
-                        <div class="card-body">
-                            <h5 class="card-title text-gray-800">Apel Merah</h5>
-                        </div>
-                    </div>
+                    <div class="swiper-button-next swiper-pb"></div>
+                    <div class="swiper-button-prev swiper-pb"></div>
                 </div>
             </div>
         </div>
+        <!-- end swiper produk terlaris -->
 
     </div>
 
@@ -240,8 +297,19 @@
 
 </body>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#tables').DataTable();
+    var swiper = new Swiper(".slide-content", {
+        slidesPerView: 5,
+        spaceBetween: 25,
+        loop: false,
+        centerSlide: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
     });
     $(document).ready(function() {
         setTimeout(function() {

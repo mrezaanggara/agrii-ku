@@ -43,7 +43,7 @@ section{
     top: 0;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 15;
 }
 
 footer{
@@ -59,4 +59,47 @@ footer{
 .content{
     padding-top: 100px;
     padding-bottom: 80px;
+}
+
+.slide-container{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 40px;
+}
+
+.slide-content{
+    margin: 0 40px;
+    overflow: hidden;
+}   
+
+.swiper.detailproduk{
+    width: 800px;
+    height: 400x;
+}
+
+.swiper-slide img.detail{
+    width: 400px;
+    height: 400px;
+}
+
+.swiper-slide video{
+    width: 100%;
+}
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: #20B2AA;
+}
+
+.swiper-button-prev.swiper-pb{
+    color: #20B2AA;
+    left: 0;
+}
+
+.swiper-button-next.swiper-pb{
+    color: #20B2AA;
+    right: 0;
+}
+
+.swiper .swiper-pagination-bullet-active{
+    background-color: #20B2AA;
 }

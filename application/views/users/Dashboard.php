@@ -119,15 +119,26 @@
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
-                        <div class="card  swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="200">
+                        <div class="card shadow swiper-slide">
+                            <a href="<?php echo base_url('shop/'); ?>">
+                                <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="180">
+                            </a>
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="<?php echo base_url('shop/'); ?>">Apel Merah</a>
-                                </h5>
+                                <a href="<?php echo base_url('shop/'); ?>">
+                                    <div class="text-gray-900 text-ellipsis">
+                                        Apel Merah
+                                    </div>
+                                    <div class="text-gray-900 font-weight-bold">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="text-xs text-white font-weight-bold rounded col-md-7 mb-6" style="background-color:#20B2AA;">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -135,7 +146,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -143,7 +154,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -151,7 +162,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -159,7 +170,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -167,7 +178,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -175,7 +186,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -183,7 +194,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -209,7 +220,7 @@
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -217,7 +228,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -225,7 +236,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -233,7 +244,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -241,7 +252,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -249,7 +260,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -257,7 +268,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -265,7 +276,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -273,7 +284,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <div class="card  swiper-slide">
+                        <div class="card shadow swiper-slide">
                             <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -302,6 +313,7 @@
         spaceBetween: 25,
         loop: false,
         centerSlide: true,
+        grabCursor: true,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,

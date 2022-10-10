@@ -98,5 +98,10 @@
     <?php $this->load->view('partials/users/js') ?>
 
 </body>
+<script>
+    document.querySelectorAll('oembed[url]').forEach(element => {
+        iframely.load(element, element.attributes.url.value);
+    });
+</script>
 
 </html>

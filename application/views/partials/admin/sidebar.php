@@ -54,7 +54,7 @@
                 <h6 class="collapse-header">Pengaturan Website:</h6>
                 <a class="collapse-item" href="<?php echo site_url('admin/carousel') ?>">Carousel</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/artikel') ?>">Artikel</a>
-                <a class="collapse-item" href="<?php echo site_url('surat/fakturpenjualan') ?>">About us</a>
+                <a class="collapse-item" href="<?php echo site_url('admin/aboutus') ?>">About us</a>
             </div>
         </div>
     </li>

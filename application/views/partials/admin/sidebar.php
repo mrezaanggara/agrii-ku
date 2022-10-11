@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('dashboard') ?>">
+        <a class="nav-link" href="<?php echo site_url('dashboard') ?>" target="_blank">
             <i class="fas fa-fw fa-home"></i>
             <span>View Dashboard</span></a>
     </li>
@@ -35,10 +35,10 @@
         <div id="collapseProduk" class="collapse" aria-labelledby="headingProduk" data-bs-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Produk:</h6>
+                <a class="collapse-item" href="<?php echo site_url('admin/produk/addProduct') ?>">Tambah Produk Baru</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/produk') ?>">Semua Produk</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/produk/kategori') ?>">Kategori Produk</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/produk/jenis') ?>">Jenis Produk</a>
-                <a class="collapse-item" href="<?php echo site_url('admin/produk/addProduct') ?>">Tambah Produk Baru</a>
             </div>
         </div>
     </li>
@@ -76,7 +76,7 @@
         <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Users Admin:</h6>
-                <a class="collapse-item" href="users">Semua Users Admin</a>
+                <a class="collapse-item" href="<?php echo site_url('admin/users') ?>">Semua Users Admin</a>
                 <a class="collapse-item" href="utilities-border.html">Tambah Users Admin</a>
             </div>
         </div>

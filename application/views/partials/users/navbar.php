@@ -32,15 +32,6 @@
                 </a>
             </li>
 
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item small">
-                <a class="nav-link" href="<?php echo base_url('login'); ?>" role="button">
-                    <span class="mr-2 d-none d-lg-inline text-white">Login</span>
-                </a>
-            </li>
-
         </ul>
     </div>
 </nav>

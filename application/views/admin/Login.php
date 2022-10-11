@@ -41,16 +41,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Sistem Informasi Agrii-KU</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="<?php echo site_url('login/auth') ?>" method="post">
                                         <div class="form-group">
-                                            <input type="username" class="form-control form-control-user" id="username" placeholder="Enter Username...">
+                                            <input type="username" class="form-control form-control-user" name="username" placeholder="Enter Username..." required="required" autofocus="autofocus" oninvalid="this.setCustomValidity('Masukkan Username')" oninput="setCustomValidity('')">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="password" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required="required" autofocus="autofocus" oninvalid="this.setCustomValidity('Masukkan Password')" oninput="setCustomValidity('')">
                                         </div>
-                                        <a href="<?php echo base_url('admin/dashboard'); ?>" class="btn btn-primary btn-user btn-block" style="background-color:#20B2AA ;border-color:#20B2AA ;box-shadow:none">
+                                        <button class="btn btn-primary btn-user btn-block" type="submit" name="login" style="background-color:#20B2AA ;border-color:#20B2AA ;box-shadow:none">
                                             Login
-                                        </a>
+                                        </button>
                                     </form>
                                     <hr>
                                 </div>

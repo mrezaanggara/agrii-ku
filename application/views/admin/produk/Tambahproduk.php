@@ -32,12 +32,12 @@
                                 <div class="card-header">
                                     <h6 class="m-0 font-weight-bold text-primary">Form tambah produk</h6>
                                 </div>
-                                <form name="form" id="form">
+                                <form action="<?php echo site_url('admin/produk/addProduct') ?>" method="post" enctype="multipart/form-data">
 
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="namaProduk">Nama Produk</label>
-                                            <input type="text" class="form-control" id="namaProduk" placeholder="Nama Produk">
+                                            <input type="text" class="form-control" name="namaProduk" placeholder="Nama Produk" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="hargaProduk">Harga Produk</label>
@@ -45,29 +45,29 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp.</span>
                                                 </div>
-                                                <input type="number" min="0" class="form-control" id="hargaProduk" placeholder="0">
+                                                <input type="number" min="0" class="form-control" name="hargaProduk" placeholder="0" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="kategoriProduk">Kategori Produk</label>
-                                                    <select class="form-control" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                    <select class="form-control" name="kategori" aria-label="Default select example" required>
+                                                        <option selected>Pilih Kategori Produk</option>
+                                                        <?php foreach ($kategori as $key => $data) : ?>
+                                                            <option value="<?= $data['id'] ?>"><?= $data['kategori']; ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="jenisProduk">Jenis Produk</label>
-                                                    <select class="form-control" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                    <select class="form-control" name="jenis" aria-label="Default select example" required>
+                                                        <option selected>Pilih Jenis Produk</option>
+                                                        <?php foreach ($jenis as $key => $data) : ?>
+                                                            <option value="<?= $data['id'] ?>"><?= $data['jenis'] ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -77,7 +77,7 @@
                                                 <div class="form-group">
                                                     <label for="stokProduk">Stok Produk</label>
                                                     <div class="input-group mb-3">
-                                                        <input type="number" min="0" class="form-control" id="stokProduk" placeholder="0">
+                                                        <input type="number" min="0" class="form-control" name="stokProduk" placeholder="0" required>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">pcs</span>
                                                         </div>
@@ -88,9 +88,9 @@
                                                 <div class="form-group">
                                                     <label for="beratProduk">Berat Produk</label>
                                                     <div class="input-group mb-3">
-                                                        <input type="number" min="0" class="form-control" id="beratProduk" placeholder="0">
+                                                        <input type="number" min="0" class="form-control" name="beratProduk" placeholder="0" required>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text">kg</span>
+                                                            <span class="input-group-text">gram</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,7 +99,7 @@
                                         <div class="form-group">
                                             <div class="form-label-group">
                                                 <label for="deskripsi">Deskripsi Produk</label>
-                                                <textarea class="form-control" id="deskripsi" placeholder=""></textarea>
+                                                <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Produk" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -109,7 +109,7 @@
                                                     <div class="form-group">
                                                         <label for="panjang">Panjang</label>
                                                         <div class="input-group mb-3">
-                                                            <input type="number" min="0" class="form-control" id="panjang" placeholder="0">
+                                                            <input type="number" min="0" class="form-control" name="panjang" placeholder="0" required>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">cm</span>
                                                             </div>
@@ -120,7 +120,7 @@
                                                     <div class="form-group">
                                                         <label for="lebar">Lebar</label>
                                                         <div class="input-group mb-3">
-                                                            <input type="number" min="0" class="form-control" id="lebar" placeholder="0">
+                                                            <input type="number" min="0" class="form-control" name="lebar" placeholder="0" required>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">cm</span>
                                                             </div>
@@ -131,7 +131,7 @@
                                                     <div class="form-group">
                                                         <label for="tinggi">Tinggi</label>
                                                         <div class="input-group mb-3">
-                                                            <input type="number" min="0" class="form-control" id="tinggi" placeholder="0">
+                                                            <input type="number" min="0" class="form-control" name="tinggi" placeholder="0" required>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">cm</span>
                                                             </div>
@@ -143,10 +143,10 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="gambar">Gambar Produk</label>
+                                                    <label for="gambar">Gambar Produk <a class="text-xs text-danger">*maks 3</a></label>
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" name="gambar" class="custom-file-input-gambar" id="gambar" accept="image/*" multiple>
+                                                            <input onchange="cek()" type="file" name="gambar[]" class="custom-file-input-gambar" id="gambar[]" accept="image/*" multiple>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -154,10 +154,11 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="video">Video Produk</label>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input type="file" name="video" class="custom-file-input-video" id="video" accept="video/*" multiple>
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fa-brands fa-youtube"></i></span>
                                                         </div>
+                                                        <input type="text" class="form-control" name="video" placeholder="Url Youtube" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,8 +193,15 @@
 
 </body>
 <script type="text/javascript">
-    const checkbox = document.getElementById('check')
+    function cek() {
+        var total_file = $("input:file")[0].files.length;
+        if (total_file > 3) {
+            alert('Gambar Max 3');
+            return false;
+        }
+    }
 
+    const checkbox = document.getElementById('check')
     checkbox.addEventListener('change', (event) => {
         if (event.currentTarget.checked) {
             alert('Pastikan Data Kembali sebelum tekan "SUBMIT"');

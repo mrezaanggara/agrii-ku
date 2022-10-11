@@ -6,10 +6,20 @@ class produkModel extends CI_Model
         #...
     }
 
+    public function getId()
+    {
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->order_by('id', 'desc');
+        $this->db->limit(1);
+        $query = $this->db->get()->row();
+        return $query;
+    }
+
     public function addProduct($data)
     {
         $this->db->insert('produk', $data);
-        return $this->db->affected_rows;
+        return $this->db->affected_rows();
     }
 
     public function deleteProduct($id)

@@ -38,10 +38,9 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>No.</th>
-                                                    <th>Gambar</th>
+                                                    <th>Username</th>
                                                     <th>Nama</th>
                                                     <th>Role</th>
-                                                    <th>Tanggal</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -52,9 +51,6 @@
                                                 <tr>
                                                     <td width="80">
                                                         <?= $no++; ?>
-                                                    </td>
-                                                    <td width="250">
-                                                        <img src="" alt="" height="50" width="250">
                                                     </td>
                                                     <td width="200">
                                                         adad

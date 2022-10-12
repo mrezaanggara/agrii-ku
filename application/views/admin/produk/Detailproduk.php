@@ -23,92 +23,238 @@
                 <!--content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Tambah Produk Produk</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Produk</h1>
                     </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="card shadow mb-4">
-                                <div class="card-header">
-                                    <h6 class="m-0 font-weight-bold text-primary">Detail produk</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div id="produkCarousel" class="carousel slide" data-bs-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="carousel-item active">
-                                                            <img src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" class="d-block w-100 rounded" alt="..." height="300" width="300">
+                    <?php foreach ($produk as $produk) : ?>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6 class="m-0 font-weight-bold text-primary">Detail produk</h6>
+                                        <a href="<?php echo site_url('admin/produk') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                            <i class="fa fa-undo fa-sm text-white-50"></i> Kembali
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div id="produkCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                        <div class="carousel-inner">
+                                                            <?php
+                                                            foreach ($gambar as $key => $value) {
+                                                                if ($key == 0) { ?>
+                                                                    <div class="carousel-item active">
+                                                                        <img src="<?php echo base_url("data/images/product/" . $value['gambar']) ?>" class="d-block w-100 rounded" height="300">
+                                                                    </div>
+                                                                <?php } else { ?>
+                                                                    <div class="carousel-item ">
+                                                                        <img src="<?php echo base_url("data/images/product/" . $value['gambar']) ?>" class="d-block w-100 rounded" height="300">
+                                                                    </div>
+                                                            <?php }
+                                                            }
+                                                            ?>
                                                         </div>
-                                                        <div class="carousel-item">
-                                                            <img src=",," class="d-block w-100 rounded" alt="..." height="300" width="300">
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src=",," class="d-block w-100 rounded" alt="..." height="300" width="300">
-                                                        </div>
+                                                        <a role="button" class="carousel-control-prev" type="button" data-bs-target="#produkCarousel" data-bs-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                                        </a>
+                                                        <a role="button" class="carousel-control-next" type="button" data-bs-target="#produkCarousel" data-bs-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                        </a>
                                                     </div>
-                                                    <a role="button" class="carousel-control-prev" type="button" data-bs-target="#produkCarousel" data-bs-slide="prev">
-                                                        <span class="glyphicon glyphicon-chevron-right"></span>
-                                                    </a>
-                                                    <a role="button" class="carousel-control-next" type="button" data-bs-target="#produkCarousel" data-bs-slide="next">
-                                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                                    </a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="embed-responsive embed-responsive-16by9 rounded">
+                                                        <iframe src="https://www.youtube.com/embed/<?= $produk['video']; ?>" title="YouTube video" allowfullscreen></iframe>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="embed-responsive embed-responsive-16by9 rounded">
-                                                    <video width="320" height="240" controls>
-                                                        <source src="<?php echo base_url('data/videos/test.mp4') ?>" type="video/mp4">
-                                                    </video>
+                                        </div>
+                                        <hr>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="card shadow md-3">
+                                                        <div class="card-body">
+                                                            <div class="col text-gray-900">
+                                                                <h4>Nama Produk : <?= $produk['nama']; ?></h4>
+                                                                <a class="font-weight-bold">Harga Produk</a>
+                                                                <p><?= rupiah($produk['harga']); ?> / pcs</p>
+                                                                <a class="font-weight-bold">Kategori Produk</a>
+                                                                <p><?= $produk['kategori']; ?></p>
+                                                                <a class="font-weight-bold">Jenis Produk</a>
+                                                                <p><?= $produk['jenis']; ?></p>
+                                                                <a class="font-weight-bold">Deskripsi Produk</a>
+                                                                <p><?= $produk['deskripsi']; ?></p>
+                                                                <a class="font-weight-bold">Status Produk</a>
+                                                                <p>Tersedia</p>
+                                                                <a class="font-weight-bold"></a>
+                                                                <p></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card shadow md-3">
+                                                        <div class="card-body">
+                                                            <div class="col text-gray-900">
+                                                                <a class="font-weight-bold">Stok Produk</a>
+                                                                <h4><?= $produk['stok']; ?> / pcs</h4>
+                                                                <a class="font-weight-bold">Dimensi Produk</a><br>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <a class="font-weight-bold">Panjang</a>
+                                                                        <p><?= $produk['panjang']; ?> cm</p>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <a class="font-weight-bold">Tinggi</a>
+                                                                        <p><?= $produk['tinggi']; ?> cm</p>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <a class="font-weight-bold">Lebar</a>
+                                                                        <p><?= $produk['lebar']; ?> cm</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-warning dropdown-toggle shadow-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Ubah data produk
+                                                        </button>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                            <li><a class="dropdown-item" href="#">Ubah Gambar</a></li>
+                                                            <li><a class="dropdown-item" href="#">Ubah Video</a></li>
+                                                            <li>
+                                                                <hr class="dropdown-divider">
+                                                            </li>
+                                                            <li><a class="dropdown-item text-gray-900" type="button" data-bs-toggle="modal" data-bs-target="#modal_edit_detail">Ubah Detail</a></li>
+                                                            <li><a class="dropdown-item" href="#">Ubah Stok</a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="card shadow md-3">
-                                                    <div class="card-body">
-                                                        <div class="col text-gray-900">
-                                                            <a>Kode Produk : xxxxxx</a>
-                                                            <h4>Nama Produk : xxxxx</h4>
-                                                            <a class="font-weight-bold">Harga Produk</a>
-                                                            <p>Rp. 20.000,00 / pcs</p>
-                                                            <a class="font-weight-bold">Kategori Produk</a>
-                                                            <p>Buah-buahan</p>
-                                                            <a class="font-weight-bold">Jenis Produk</a>
-                                                            <p>Olahan</p>
-                                                            <a class="font-weight-bold">Deskripsi Produk</a>
-                                                            <p>input dengan alamat lengkap, lat, dan long auto</p>
-                                                            <a class="font-weight-bold">Status Produk</a>
-                                                            <p>Tersedia</p>
-                                                            <a class="font-weight-bold"></a>
-                                                            <p></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Edit Detail -->
+                        <div class="modal fade" id="modal_edit_detail" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Update Detail Produk</h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="<?php echo site_url('admin/produk/edit') ?>" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="text" id="id" name="id" class="form-control" placeholder="id" required="required" value="<?= $produk['id_produk'] ?>" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namaProduk">Nama Produk</label>
+                                                <input type="text" class="form-control" name="namaProduk" placeholder="Nama Produk" value="<?= $produk['nama'] ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="hargaProduk">Harga Produk</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Rp.</span>
+                                                    </div>
+                                                    <input type="number" min="0" class="form-control" name="hargaProduk" placeholder="0" value="<?= $produk['harga'] ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="kategoriProduk">Kategori Produk</label>
+                                                        <select class="form-control" name="kategori" aria-label="Default select example" required>
+                                                            <option disabled selected>Pilih Kategori Produk</option>
+                                                            <?php foreach ($kategori as $key => $data) : ?>
+                                                                <option value="<?= $data['id'] ?>"><?= $data['kategori']; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="jenisProduk">Jenis Produk</label>
+                                                        <select class="form-control" name="jenis" aria-label="Default select example" required>
+                                                            <option disabled selected>Pilih Jenis Produk</option>
+                                                            <?php foreach ($jenis as $key => $data) : ?>
+                                                                <option value="<?= $data['id'] ?>"><?= $data['jenis'] ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="stokProduk">Stok Produk</label>
+                                                        <div class="input-group mb-3">
+                                                            <input type="number" min="0" class="form-control" name="stokProduk" placeholder="0" value="<?= $produk['stok'] ?>" required>
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">pcs</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="beratProduk">Berat Produk</label>
+                                                        <div class="input-group mb-3">
+                                                            <input type="number" min="0" class="form-control" name="beratProduk" placeholder="0" value="<?= $produk['berat'] ?>" required>
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">gram</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="card shadow md-3">
-                                                    <div class="card-body">
-                                                        <div class="col text-gray-900">
-                                                            <a class="font-weight-bold">Stok Produk</a>
-                                                            <h4>9999 / pcs</h4>
-                                                            <a class="font-weight-bold">Dimensi Produk</a><br>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <a class="font-weight-bold">Panjang</a>
-                                                                    <p>10 cm</p>
+                                            <div class="form-group">
+                                                <div class="form-label-group">
+                                                    <label for="deskripsi">Deskripsi Produk</label>
+                                                    <textarea class="form-control" name="deskripsi" placeholder="Deskripsi Produk" rows="5" required><?= $produk['deskripsi'] ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="dimensiBarang">Dimensi Produk</label>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="panjang">Panjang</label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="number" min="0" class="form-control" name="panjang" placeholder="0" value="<?= $produk['panjang'] ?>" required>
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">cm</span>
                                                                 </div>
-                                                                <div class="col">
-                                                                    <a class="font-weight-bold">Tinggi</a>
-                                                                    <p>10 cm</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="lebar">Lebar</label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="number" min="0" class="form-control" name="lebar" placeholder="0" value="<?= $produk['lebar'] ?>" required>
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">cm</span>
                                                                 </div>
-                                                                <div class="col">
-                                                                    <a class="font-weight-bold">Lebar</a>
-                                                                    <p>10 cm</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="tinggi">Tinggi</label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="number" min="0" class="form-control" name="tinggi" placeholder="0" value="<?= $produk['tinggi'] ?>" required>
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">cm</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -116,15 +262,20 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="edit">Save changes</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <!-- end edit detail -->
+
+                        <!-- Modal edit gambar -->
+
+                        <!-- end edit gambar -->
+                    <?php endforeach; ?>
 
                 </div>
 
@@ -142,7 +293,10 @@
 
 </body>
 <script type="text/javascript">
-
+    function show_modal(a) {
+        document.getElementById('id').value = a;
+        $("#modal_edit_detail").modal('show');
+    }
 </script>
 
 </html>

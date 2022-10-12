@@ -8,4 +8,16 @@ class gambarModel extends CI_Model
         $this->db->where('gambar', $data);
         $this->db->update('gambar');
     }
+
+    public function getDataGambar($id)
+    {
+        $query = $this->db->query("SELECT gambar from gambar where id_produk=" . $id);
+        return $query->result_array();
+    }
+
+    public function delete($gambar)
+    {
+        $this->db->delete('gambar', ['gambar' => $gambar]);
+        return $this->db->affected_rows();
+    }
 }

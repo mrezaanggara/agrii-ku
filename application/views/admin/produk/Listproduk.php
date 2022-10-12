@@ -23,7 +23,7 @@
                 <!--content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Daftar Produk</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Produk</h1>
                     </div>
 
                     <div class="row">
@@ -49,32 +49,33 @@
                                                 <?php
                                                 $no = 1;
                                                 ?>
-                                                <tr>
-                                                    <td width="80">
-                                                        <?= $no++; ?>
-                                                    </td>
-                                                    <td width="250">
-                                                        <img src="" alt="" height="50" width="50">
-                                                    </td>
-                                                    <td width="250">
-                                                        adad
-                                                    </td>
-                                                    <td width="200">
-                                                        adad
-                                                    </td>
-                                                    <td width="150">
-                                                        adaa
-                                                    </td>
-                                                    <td>
-                                                        <a type="button" href="<?php echo site_url("admin/produk/detailproduct"); ?>" class="btn btn-sm btn-success">
-                                                            <i class="fas fa-info"></i>
-                                                        </a>
-                                                        <a type="button" class="btn btn-sm btn-danger" href="">
-                                                            <i class="fas fa-trash"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-
+                                                <?php foreach ($produk as $key => $data) : ?>
+                                                    <tr>
+                                                        <td width="80">
+                                                            <?= $no++; ?>
+                                                        </td>
+                                                        <td width="250">
+                                                            <img class="rounded" src="<?php echo base_url('data/images/product/' . $data['gambar']) ?>" width="270" height="150">
+                                                        </td>
+                                                        <td width="250">
+                                                            <?= $data['nama']; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?= $data['kategori']; ?>
+                                                        </td>
+                                                        <td width="150">
+                                                            <?= $data['stok']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <a type="button" href="<?php echo site_url("admin/produk/detailproduct/" . $data['id']); ?>" class="btn btn-sm btn-success">
+                                                                <i class="fas fa-info"></i>
+                                                            </a>
+                                                            <a type="button" class="btn btn-sm btn-danger" href="">
+                                                                <i class="fas fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>

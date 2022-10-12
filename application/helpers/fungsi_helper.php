@@ -16,6 +16,12 @@ function check_not_login()
         redirect('login');
     }
 }
+// untuk merubah format harga
+function rupiah($harga)
+{
+    $rupiah = "Rp " . number_format($harga, 2, ',', '.');
+    return $rupiah;
+}
 // untuk menampilkan format tanggal
 function formatTanggal($date)
 {

@@ -101,7 +101,6 @@ class Produk extends CI_Controller
     public function deleteProduct($id)
     {
         $this->load->model('produkModel');
-        $this->load->model('gambarModel');
 
         if ($id != null) {
             $data = $this->db->get_where('gambar', ['id_produk' => $id])->row();
@@ -180,6 +179,7 @@ class Produk extends CI_Controller
 
     public function editStatus()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->load->model('produkModel');
         $id = $this->input->post('id');
         $this->load->library('form_validation');
@@ -209,6 +209,7 @@ class Produk extends CI_Controller
 
     public function editVideo()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->load->model('produkModel');
         $id = $this->input->post('id');
         $url = $this->input->post('video');
@@ -313,13 +314,95 @@ class Produk extends CI_Controller
         redirect('admin/produk/jenis');
     }
 
+    public function hapusJenis($id)
+    {
+        $this->load->model('jenisModel');
+
+        if ($id != null) {
+            $data = $this->db->get_where('jenis', ['id' => $id])->row();
+            $delete = $this->jenisModel->deleteJenis($id);
+            if ($delete) {
+                unlink("data/images/product/" . $data->gambar);
+            }
+
+            redirect('admin/produk/jenis');
+        }
+    }
+
+    public function editJenis()
+    {
+        $this->load->model('jenisModel');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('jenis_edit', 'jenis_edit', 'required');
+        $this->form_validation->set_rules('status', 'status', 'required');
+        if ($this->form_validation->run() == TRUE) {
+            $id = $this->input->post('id');
+            $data = array(
+                'jenis' => $this->input->post('jenis_edit'),
+                'status' => $this->input->post('status')
+            );
+            $this->jenisModel->updateJenis($data, $id);
+        }
+        redirect('admin/produk/jenis');
+    }
+
     public function kategori()
     {
         check_not_login();
-        $this->load->model('jenisModel');
+        $this->load->model('kategoriModel');
         $data = [
-            'title' => 'Jenis Produk | Agrii-ku',
+            'title' => 'Kategori Produk | Agrii-ku',
         ];
+        $data['kategori'] = $this->kategoriModel->getKategori();
         $this->load->view('admin/produk/kategoriproduk', $data);
+    }
+
+    public function addKategori()
+    {
+        $this->load->model('kategoriModel');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('kategori', 'kategori', 'required');
+        if ($this->form_validation->run() == TRUE) {
+            $data = array(
+                'kategori' => $this->input->post('kategori')
+            );
+            $this->kategoriModel->addKategori($data);
+        }
+        redirect('admin/produk/kategori');
+    }
+
+    public function hapusKategori($id)
+    {
+        $this->load->model('kategoriModel');
+
+        if ($id != null) {
+            $data = $this->db->get_where('kategori', ['id' => $id])->row();
+            $delete = $this->kategoriModel->deleteKategori($id);
+            if ($delete) {
+                unlink("data/images/product/" . $data->gambar);
+            }
+
+            redirect('admin/produk/kategori');
+        }
+    }
+
+    public function editKategori()
+    {
+        $this->load->model('kategoriModel');
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('kategori_edit', 'kategori_edit', 'required');
+        $this->form_validation->set_rules('status', 'status', 'required');
+        if ($this->form_validation->run() == TRUE) {
+            $id = $this->input->post('id');
+            $data = array(
+                'kategori' => $this->input->post('kategori_edit'),
+                'status' => $this->input->post('status')
+            );
+            $this->kategoriModel->updateKategori($data, $id);
+        }
+        redirect('admin/produk/kategori');
     }
 }

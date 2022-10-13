@@ -63,10 +63,10 @@
                                                             <?php }; ?>
                                                         </td>
                                                         <td>
-                                                            <a type="button" href="" class="btn btn-sm btn-success">
+                                                            <a type="button" onClick="show_modal('<?php echo $jenis['id'] ?>','<?php echo $jenis['jenis'] ?>')" class="btn btn-sm btn-success text-white">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
-                                                            <a type="button" class="btn btn-sm btn-danger" href="">
+                                                            <a type="button" href="<?php echo site_url("admin/produk/hapusjenis/" . $jenis['id']); ?>" class="btn btn-sm btn-danger">
                                                                 <i class="fas fa-trash"></i>
                                                             </a>
                                                         </td>
@@ -83,7 +83,7 @@
                                 <div class="card-header">
                                     <h6 class="m-0 font-weight-bold text-primary">Tambah Jenis Produk</h6>
                                 </div>
-                                <form action="<?php echo site_url('admin/produk/addkategori') ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo site_url('admin/produk/addjenis') ?>" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="jenis">Jenis</label>
@@ -98,6 +98,44 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal edit stok dan status -->
+                <div class="modal fade" id="modal_edit" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Update Jenis</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="<?php echo site_url('admin/produk/editjenis') ?>" method="post" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <input type="text" id="id" name="id" class="form-control" placeholder="id" required="required" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jenisProduk">Jenis</label>
+                                        <input type="text" id="jenis_edit" name="jenis_edit" class="form-control" placeholder="jenis" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Status Produk</label>
+                                        <select class="form-control" name="status" aria-label="Default select example" required>
+                                            <option disabled selected>Pilih Status</option>
+                                            <option value="0">Disembunyikan</option>
+                                            <option value="1">Tampil</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" name="edit">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end edit stok dan status -->
 
             </div>
 
@@ -115,6 +153,11 @@
 
 </body>
 <script type="text/javascript">
+    function show_modal(a, b) {
+        document.getElementById('id').value = a;
+        document.getElementById('jenis_edit').value = b;
+        $("#modal_edit").modal('show');
+    }
     $(document).ready(function() {
         $('#tables').DataTable();
     });

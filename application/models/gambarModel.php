@@ -27,10 +27,4 @@ class gambarModel extends CI_Model
         $this->db->where('id_produk', ['id_produk' => $id]);
         return $this->db->affected_rows();
     }
-
-    public function deleteCarousel($id)
-    {
-        $this->db->delete('gambar', ['id_carousel' => $id]);
-        return $this->db->affected_rows();
-    }
 }

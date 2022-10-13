@@ -39,11 +39,11 @@
                             foreach ($carousel as $key => $value) {
                                 if ($key == 0) { ?>
                                     <div class="carousel-item active">
-                                        <img src="<?php echo base_url("data/images/carousel/" . $value['gambar'] . ".jpg") ?>" class="d-block w-100 rounded" height="350">
+                                        <img src="<?php echo base_url("data/images/carousel/" . $value['carousel']) ?>" class="d-block w-100 rounded" height="350">
                                     </div>
                                 <?php } else { ?>
                                     <div class="carousel-item ">
-                                        <img src="<?php echo base_url("data/images/carousel/" . $value['gambar'] . ".jpg") ?>" class="d-block w-100 rounded" height="350">
+                                        <img src="<?php echo base_url("data/images/carousel/" . $value['carousel']) ?>" class="d-block w-100 rounded" height="350">
                                     </div>
                             <?php }
                             }

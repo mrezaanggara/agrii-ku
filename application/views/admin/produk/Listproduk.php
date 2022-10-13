@@ -70,7 +70,7 @@
                                                             <a type="button" href="<?php echo site_url("admin/produk/detailproduct/" . $data['id']); ?>" class="btn btn-sm btn-success">
                                                                 <i class="fas fa-info"></i>
                                                             </a>
-                                                            <a type="button" class="btn btn-sm btn-danger" href="">
+                                                            <a type="button" class="btn btn-sm btn-danger" href="<?php echo site_url("admin/produk/deleteproduct/" . $data['id']); ?>">
                                                                 <i class="fas fa-trash"></i>
                                                             </a>
                                                         </td>

@@ -143,7 +143,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="gambar">Gambar Produk <a class="text-xs text-danger">*maks 3</a></label>
+                                                    <label for="gambar">Gambar Produk <a class="text-xs text-danger">*maks 3mb</a></label>
                                                     <div class="input-group">
                                                         <div class="custom-file">
                                                             <input onchange="cek()" type="file" name="gambar[]" class="custom-file-input-gambar" id="gambar[]" accept="image/*" multiple>

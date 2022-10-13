@@ -35,8 +35,8 @@
         <div id="collapseProduk" class="collapse" aria-labelledby="headingProduk" data-bs-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Produk:</h6>
-                <a class="collapse-item" href="<?php echo site_url('admin/produk/addProduct') ?>">Tambah Produk Baru</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/produk') ?>">Semua Produk</a>
+                <a class="collapse-item" href="<?php echo site_url('admin/produk/addProduct') ?>">Tambah Produk Baru</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/produk/kategori') ?>">Kategori Produk</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/produk/jenis') ?>">Jenis Produk</a>
             </div>

@@ -87,7 +87,11 @@
                                                                 <a class="font-weight-bold">Deskripsi Produk</a>
                                                                 <p><?= $produk['deskripsi']; ?></p>
                                                                 <a class="font-weight-bold">Status Produk</a>
-                                                                <p>Tersedia</p>
+                                                                <?php if ($produk['status'] == 0) { ?>
+                                                                    <p>Habis</p>
+                                                                <?php } else { ?>
+                                                                    <p>Tersedia</p>
+                                                                <?php }; ?>
                                                                 <a class="font-weight-bold"></a>
                                                                 <p></p>
                                                             </div>
@@ -124,13 +128,13 @@
                                                             Ubah data produk
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">Ubah Gambar</a></li>
-                                                            <li><a class="dropdown-item" href="#">Ubah Video</a></li>
+                                                            <li><a class="dropdown-item text-gray-900" type="button" data-bs-toggle="modal" data-bs-target="#modal_edit_gambar">Ubah Gambar</a></li>
+                                                            <li><a class="dropdown-item text-gray-900" type="button" data-bs-toggle="modal" data-bs-target="#modal_edit_video">Ubah Video</a></li>
                                                             <li>
                                                                 <hr class="dropdown-divider">
                                                             </li>
                                                             <li><a class="dropdown-item text-gray-900" type="button" data-bs-toggle="modal" data-bs-target="#modal_edit_detail">Ubah Detail</a></li>
-                                                            <li><a class="dropdown-item" href="#">Ubah Stok</a></li>
+                                                            <li><a class="dropdown-item text-gray-900" type="button" data-bs-toggle="modal" data-bs-target="#modal_edit_stok">Ubah Stok</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -273,8 +277,129 @@
                         <!-- end edit detail -->
 
                         <!-- Modal edit gambar -->
-
+                        <div class="modal fade" id="modal_edit_gambar" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Update Gambar Produk</h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="<?php echo site_url('admin/produk/tambahgambar') ?>" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body">
+                                            <div class="col">
+                                                <?php foreach ($gambar as $g) : ?>
+                                                    <div class="row justify-content-between align-items-center">
+                                                        <img class="rounded" src="<?php echo base_url("data/images/product/" . $g['gambar']) ?>" alt="" height="100" width="150">
+                                                        <div>
+                                                            <a href="<?php echo site_url('admin/produk/hapusGambar/' . $g['gambar'] . "/" . $g['id_produk']) ?>" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
+                                                                <i class="fa fa-trash fa-sm text-white-50"></i> Hapus
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                <?php endforeach; ?>
+                                                <div class="form-group">
+                                                    <input type="text" id="id" name="id" class="form-control" placeholder="id" required="required" value="<?= $produk['id_produk'] ?>" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="gambar">Upload gambar baru <a class="text-xs text-danger">*maks 3mb</a></label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" name="gambar[]" class="custom-file-input-gambar" id="gambar[]" accept="image/*" multiple>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="edit">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <!-- end edit gambar -->
+
+                        <!-- Modal edit video -->
+                        <div class="modal fade" id="modal_edit_video" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Update Video Produk</h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="<?php echo site_url('admin/produk/editvideo') ?>" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="text" id="id" name="id" class="form-control" placeholder="id" required="required" value="<?= $produk['id_produk'] ?>" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="video">Video Produk</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fa-brands fa-youtube"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="video" placeholder="link Youtube video baru" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="edit">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end edit video -->
+
+                        <!-- Modal edit stok dan status -->
+                        <div class="modal fade" id="modal_edit_stok" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Update Stok dan Status Produk</h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="<?php echo site_url('admin/produk/editstatus') ?>" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="text" id="id" name="id" class="form-control" placeholder="id" required="required" value="<?= $produk['id_produk'] ?>" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="stokProduk">Stok Produk</label>
+                                                <div class="input-group mb-3">
+                                                    <input type="number" min="0" class="form-control" name="stokProduk" placeholder="0" value="<?= $produk['stok'] ?>" required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">pcs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="jenisProduk">Status Produk</label>
+                                                <select class="form-control" name="status" aria-label="Default select example" required>
+                                                    <option disabled selected>Pilih Status Produk</option>
+                                                    <option value="0">Habis</option>
+                                                    <option value="1">Tersedia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" name="edit">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end edit stok dan status -->
                     <?php endforeach; ?>
 
                 </div>

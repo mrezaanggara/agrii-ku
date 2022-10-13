@@ -52,7 +52,7 @@
                                                         <?= $no++; ?>
                                                     </td>
                                                     <td width="200">
-                                                        Buah-buahan
+                                                        Olahan
                                                     </td>
                                                     <td width="200">
                                                         Tampil
@@ -81,7 +81,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="kategori">Kategori</label>
-                                            <input type="text" class="form-control" id="kategori" placeholder="Kategori Produk">
+                                            <input type="text" class="form-control" name="kategori" id="kategori" placeholder="Kategori Produk">
                                         </div>
                                     </div>
                                     <div class="card-footer">

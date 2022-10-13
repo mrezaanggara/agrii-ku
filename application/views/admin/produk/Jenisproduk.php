@@ -47,25 +47,31 @@
                                                 <?php
                                                 $no = 1;
                                                 ?>
-                                                <tr>
-                                                    <td width="80">
-                                                        <?= $no++; ?>
-                                                    </td>
-                                                    <td width="200">
-                                                        Olahan
-                                                    </td>
-                                                    <td width="200">
-                                                        Tampil
-                                                    </td>
-                                                    <td>
-                                                        <a type="button" href="" class="btn btn-sm btn-success">
-                                                            <i class="fas fa-edit"></i>
-                                                        </a>
-                                                        <a type="button" class="btn btn-sm btn-danger" href="">
-                                                            <i class="fas fa-trash"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                                <?php foreach ($jenis as $jenis) : ?>
+                                                    <tr>
+                                                        <td width="80">
+                                                            <?= $no++; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?= $jenis['jenis']; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?php if ($jenis['status'] == 0) { ?>
+                                                                Disembunyikan
+                                                            <?php } else { ?>
+                                                                Tampil
+                                                            <?php }; ?>
+                                                        </td>
+                                                        <td>
+                                                            <a type="button" href="" class="btn btn-sm btn-success">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                            <a type="button" class="btn btn-sm btn-danger" href="">
+                                                                <i class="fas fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -77,11 +83,11 @@
                                 <div class="card-header">
                                     <h6 class="m-0 font-weight-bold text-primary">Tambah Jenis Produk</h6>
                                 </div>
-                                <form action="">
+                                <form action="<?php echo site_url('admin/produk/addkategori') ?>" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="jenis">Jenis</label>
-                                            <input type="text" class="form-control" id="jenis" placeholder="Jenis Produk">
+                                            <input type="text" class="form-control" name="jenis" id="jenis" placeholder="Jenis Produk" required>
                                         </div>
                                     </div>
                                     <div class="card-footer">

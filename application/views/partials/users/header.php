@@ -15,5 +15,5 @@
 <link href="<?php echo base_url('assets/vendor/datatables/datatables.min.css') ?>" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key={2ca692203b33bf539021f4}"></script>
+<script charset="utf-8" src="https://cdn.iframe.ly/embed.js?api_key=2ca692203b33bf539021f4"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

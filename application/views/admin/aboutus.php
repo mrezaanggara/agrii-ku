@@ -32,11 +32,12 @@
                                 <div class="card-header">
                                     <h6 class="m-0 font-weight-bold text-primary">Form Halaman About us</h6>
                                 </div>
-                                <form name="form" id="form">
-                                    <div class="card-body">
-                                        <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
-                                    </div>
-
+                                <form action="<?php echo site_url('admin/aboutus/edit') ?>" method="post" enctype="multipart/form-data">
+                                    <?php foreach ($about as $about) : ?>
+                                        <div class="card-body">
+                                            <textarea name="editor" id="editor" cols="30" rows="10"><?= $about['content']; ?></textarea>
+                                        </div>
+                                    <?php endforeach; ?>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
@@ -48,7 +49,6 @@
                 </div>
 
                 <?php $this->load->view('partials/admin/footer') ?>
-
 
             </div>
             <!-- End of Content Wrapper -->

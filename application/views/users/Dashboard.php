@@ -8,7 +8,8 @@
 <body>
 
     <div class="splash" id="splash">
-        <h2 class="fade-in">Agrii-KU</h2>
+        <!-- <h2 class="fade-in"></h2> -->
+        <img class="fade-in" src="<?php echo base_url("data/agriiku.png") ?>" style="width: 700px;">
     </div>
 
     <!-- Main Content -->
@@ -65,46 +66,38 @@
 
         <!-- kategori produk -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-800">Kategori Produk</h5>
-            <div class="row">
-                <!-- Sayur -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border shadow w-100 py-2">
-                        <a class="card-body" href="" style="color:#20B2AA;">
-                            <div class="row no-gutters align-items-center">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800" href="#">Sayur</div>
+            <h5 class="h5 mb-2 text-gray-800">Jenis Produk</h5>
+            <div class="card">
+                <div class="card-body">
+                    <div class="slide-container swiper">
+                        <div class="slide-content-kategori">
+                            <div class="card-wrapper swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Biji-bijian</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Sayuran</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Ubi-ubian</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Daging</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Buah-Buahan</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Telur</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a class="kategori text-white rounded" type="button">Olahan</a>
+                                </div>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- Buah -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border shadow h-100 py-2">
-                        <a class="card-body" href="" style="color:#20B2AA;">
-                            <div class="row no-gutters align-items-center">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Buah</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- Biji-bijian -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border shadow h-100 py-2">
-                        <a class="card-body" href="" style="color:#20B2AA;">
-                            <div class="row no-gutters align-items-center">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Biji-bijian</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- Umbi -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border shadow h-100 py-2">
-                        <a class="card-body" href="" style="color:#20B2AA;">
-                            <div class="row no-gutters align-items-center">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Umbi</div>
-                            </div>
-                        </a>
+                            <div class="swiper-button-next swiper-pb"></div>
+                            <div class="swiper-button-prev swiper-pb"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -119,87 +112,211 @@
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
-                        <div class="card shadow swiper-slide">
-                            <a href="<?php echo base_url('shop/'); ?>">
-                                <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="180">
-                            </a>
-                            <div class="card-body">
-                                <a href="<?php echo base_url('shop/'); ?>">
-                                    <div class="text-gray-900 text-ellipsis">
-                                        Apel Merah
+                        <div class="card swiper-slide card-post card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name text-ellipsis">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
                                     </div>
-                                    <div class="text-gray-900 font-weight-bold">
+                                    <div class="price">
                                         Rp 20.000
                                     </div>
                                     <hr>
-                                    <div class="text-xs text-white font-weight-bold rounded col-md-7 mb-6" style="background-color:#20B2AA;">
+                                    <div class="stock rounded">
                                         Stok | 254
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Bayam</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Brokoli</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Strawberry</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -220,81 +337,216 @@
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="<?php echo base_url('shop/'); ?>">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/spinach.png') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Bayam</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/broccoli.png') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Brokoli</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/strawberry.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Strawberry</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="card shadow swiper-slide">
-                            <img class="card-img-top rounded" src="<?php echo base_url('data/images/carousel/dummy.jpg') ?>" width="80" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a class="text-gray-800" href="">Apel Merah</a>
-                                </h5>
+                        <div class="card swiper-slide card-post">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <a href="<?php echo base_url('items/'); ?>">
+                                        <img class="card-img-top rounded" src="<?php echo base_url('data/images/product/apple.png') ?>" width="188" height="188">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body card-content">
+                                <a href="<?php echo base_url('items/'); ?>">
+                                    <div class="name">
+                                        Apel Merah
+                                    </div>
+                                    <div class="price">
+                                        Rp 20.000
+                                    </div>
+                                    <hr>
+                                    <div class="stock rounded">
+                                        Stok | 254
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-next swiper-pb"></div>
-                    <div class="swiper-button-prev swiper-pb"></div>
+                    <div class="swiper-button-next swiper-pb swiper-navBtn"></div>
+                    <div class="swiper-button-prev swiper-pb swiper-navBtn"></div>
                 </div>
             </div>
         </div>
@@ -322,6 +574,43 @@
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+            },
+            520: {
+                slidesPerView: 4,
+            },
+            950: {
+                slidesPerView: 5,
+            }
+        }
+    });
+    var swiper = new Swiper(".slide-content-kategori", {
+        slidesPerView: 6,
+        spaceBetween: 10,
+        loop: false,
+        centerSlide: true,
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+            },
+            520: {
+                slidesPerView: 4,
+            },
+            950: {
+                slidesPerView: 6,
+            }
+        }
     });
     $(document).ready(function() {
         setTimeout(function() {

@@ -19,10 +19,31 @@
             <!-- Page Heading -->
             <div class="container">
                 <h3 class="h3 mb-2 text-gray-800">Tentang Kami</h3>
-                <div class="col-md-8">
-                    <?php foreach ($about as $about) : ?>
-                        <?= $about['content']; ?>
-                    <?php endforeach; ?>
+                <div class="row">
+                    <div class="col-md-8">
+                        <?php foreach ($about as $about) : ?>
+                            <?= $about['content']; ?>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body align-items-center d-flex justify-content-center">
+                                Instagram
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-body align-items-center d-flex justify-content-center">
+                                Facebook
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-body align-items-center d-flex justify-content-center">
+                                Twitter
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#20B2AA ;">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#248b3c ;">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('/admin/dashboard') ?>">

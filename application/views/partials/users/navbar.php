@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#20B2AA; z-index: 15;" id="navbar">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#248b3c; z-index: 15;" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>"><?php echo SITE_NAME; ?></a>
         <form class="ml-md-3 navbar-search">
@@ -7,7 +7,7 @@
                 <input type="text" class="form-control border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" style="box-shadow:none">
                 <div class="input-group-append">
                     <button class="btn" type="button" style="background-color:white ;border-color:#f8f9fc ;box-shadow:none">
-                        <i class="fas fa-search fa-sm" style="color:#20B2AA"></i>
+                        <i class="fas fa-search fa-sm" style="color:#248b3c"></i>
                     </button>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white small" href="<?php echo base_url('about_us'); ?>">
-                    About us
+                    Tentang Kami
                 </a>
             </li>
 

@@ -20,7 +20,7 @@
 
 </head>
 
-<body style="background-color:#20B2AA">
+<body style="background-color:#248b3c">
 
     <div class="container">
 
@@ -48,7 +48,7 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required="required" autofocus="autofocus" oninvalid="this.setCustomValidity('Masukkan Password')" oninput="setCustomValidity('')">
                                         </div>
-                                        <button class="btn btn-primary btn-user btn-block" type="submit" name="login" style="background-color:#20B2AA ;border-color:#20B2AA ;box-shadow:none">
+                                        <button class="btn btn-primary btn-user btn-block" type="submit" name="login" style="background-color:#248b3c ;border-color:#248b3c ;box-shadow:none">
                                             Login
                                         </button>
                                     </form>

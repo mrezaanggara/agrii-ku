@@ -18,7 +18,7 @@
 
             <div class="row">
                 <div class="col-md-7" align="center">
-                    <div class="swiper rounded">
+                    <div class="swiper">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
@@ -65,15 +65,15 @@
                             <br>
                             <a class="font-weight-bold">Dimensi Produk</a><br>
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col">
                                     <a class="font-weight-bold">Panjang</a>
                                     <p>10 cm</p>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col">
                                     <a class="font-weight-bold">Tinggi</a>
                                     <p>10 cm</p>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col">
                                     <a class="font-weight-bold">Lebar</a>
                                     <p>10 cm</p>
                                 </div>

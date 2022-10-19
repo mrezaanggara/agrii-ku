@@ -19,6 +19,7 @@ class Catalogue extends CI_Controller
 
         $data = [
             'title' => 'Agrii-ku | Katalog',
+            'laman' => 'Semua Produk',
         ];
         $data['keyword'] = null;
         $data['start'] = $this->uri->segment(3);
@@ -30,6 +31,7 @@ class Catalogue extends CI_Controller
     {
         $data = [
             'title' => 'Agrii-ku | Katalog',
+            'laman' => 'Produk',
         ];
         $this->load->model('produkModel', 'produk');
         //load library

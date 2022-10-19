@@ -14,7 +14,7 @@
 
         <!-- swiper produk terbaru -->
         <div class="container">
-            <h3 class="h3 mb-2 text-gray-800 bold"><i class="fas fa-bag-shopping fa-fw"></i>Produk</h3>
+            <h3 class="h3 mb-2 text-gray-800 bold"><i class="fas fa-bag-shopping fa-fw"></i><?= $laman; ?></h3>
             <?php if ($keyword != null) {
                 echo "<h5 mb-2 text-gray-800 bold> Mencari Produk: " . $keyword . "</h5>";
             } ?>

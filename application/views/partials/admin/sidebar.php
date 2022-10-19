@@ -3,8 +3,8 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('/admin/dashboard') ?>">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-store"></i>
+        <div class="sidebar-brand-icon">
+            <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="60px">
         </div>
     </a>
 
@@ -15,7 +15,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?php echo site_url('dashboard') ?>" target="_blank">
             <i class="fas fa-fw fa-home"></i>
-            <span>View Dashboard</span></a>
+            <span>View Agri-iku</span></a>
     </li>
 
     <!-- Divider -->

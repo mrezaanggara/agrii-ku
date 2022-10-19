@@ -64,7 +64,7 @@
                                                             <?= $data['kategori']; ?>
                                                         </td>
                                                         <td width="150">
-                                                            <?= $data['stok']; ?>
+                                                            <?= $data['stok']; ?> pcs
                                                         </td>
                                                         <td>
                                                             <a type="button" href="<?php echo site_url("admin/produk/detailproduct/" . $data['id']); ?>" class="btn btn-sm btn-success">

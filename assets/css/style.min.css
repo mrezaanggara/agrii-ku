@@ -53,12 +53,22 @@
 
 .stock{
     height: 25px;
-    width: 80px;
+    width: 90px;
     border: none;
     font-size: 11px;
     color: white;
     padding: 6px 14px;
     background-color: #248b3c;
+}
+
+.stock-habis{
+    height: 25px;
+    width: 90px;
+    border: none;
+    font-size: 11px;
+    color: white;
+    padding: 6px 14px;
+    background-color: red;
 }
 
 a:link {
@@ -181,6 +191,11 @@ footer{
 
 .swiper .swiper-pagination-bullet-active{
     background-color: #248b3c;
+}
+
+.card-catalogue{
+    height: 346px;
+    width: 182px;
 }
 
 @media screen and (max-width: 768px) {

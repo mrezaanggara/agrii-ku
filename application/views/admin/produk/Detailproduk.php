@@ -87,7 +87,7 @@
                                                                 <a class="font-weight-bold">Deskripsi Produk</a>
                                                                 <p><?= $produk['deskripsi']; ?></p>
                                                                 <a class="font-weight-bold">Status Produk</a>
-                                                                <?php if ($produk['status'] == 0) { ?>
+                                                                <?php if ($produk['stok'] == 0) { ?>
                                                                     <p>Habis</p>
                                                                 <?php } else { ?>
                                                                     <p>Tersedia</p>
@@ -102,8 +102,16 @@
                                                     <div class="card shadow md-3">
                                                         <div class="card-body">
                                                             <div class="col text-gray-900">
-                                                                <a class="font-weight-bold">Stok Produk</a>
-                                                                <h4><?= $produk['stok']; ?> / pcs</h4>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <a class="font-weight-bold">Stok Produk</a>
+                                                                        <h4><?= $produk['stok']; ?> / pcs</h4>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <a class="font-weight-bold">Jumlah pengunjung melihat</a>
+                                                                        <p><?= $produk['visitor']; ?> orang</p>
+                                                                    </div>
+                                                                </div>
                                                                 <a class="font-weight-bold">Dimensi Produk</a><br>
                                                                 <div class="row">
                                                                     <div class="col">
@@ -382,14 +390,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label for="jenisProduk">Status Produk</label>
                                                 <select class="form-control" name="status" aria-label="Default select example" required>
                                                     <option disabled selected>Pilih Status Produk</option>
                                                     <option value="0">Habis</option>
                                                     <option value="1">Tersedia</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -9,6 +9,7 @@
 
 <!-- Custom styles for this template-->
 <link href="<?php echo base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+<link rel="icon" href="<?php echo site_url('data/agriiku.png') ?>" type="image/x-icon">
 
 <!-- Custom styles for this page -->
 <link href="<?php echo base_url('assets/vendor/datatables/datatables.min.css') ?>" type="text/css" rel="stylesheet" />

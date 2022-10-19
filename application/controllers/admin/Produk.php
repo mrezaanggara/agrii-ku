@@ -185,12 +185,12 @@ class Produk extends CI_Controller
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('stokProduk', 'stokProduk', 'required');
-        $this->form_validation->set_rules('status', 'status', 'required');
+        // $this->form_validation->set_rules('status', 'status', 'required');
         if ($this->form_validation->run() == TRUE) {
             $id = $this->input->post('id');
             $data = array(
                 'stok' => $this->input->post('stokProduk'),
-                'status' => $this->input->post('status'),
+                // 'status' => $this->input->post('status'),
                 'updated_at' => (new DateTime('now'))->format('Y-m-d H:i:s'),
             );
             if ($this->produkModel->updateProduct($data, $id)) {

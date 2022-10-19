@@ -4,13 +4,14 @@ class produkModel extends CI_Model
     public function getProduct($id = null)
     {
         if ($id == null) {
-            $this->db->select('produk.id,produk.nama,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+            $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
             $this->db->from('produk');
             $this->db->from('gambar');
             $this->db->from('kategori');
             $this->db->where('gambar.main_gambar = 1');
             $this->db->where('produk.kategori=kategori.id');
             $this->db->where('gambar.id_produk=produk.id');
+            $this->db->group_by('produk.id');
             return $this->db->get()->result_array();
         } else {
             $this->db->select('*, produk.id as id_produk');
@@ -21,6 +22,61 @@ class produkModel extends CI_Model
             $this->db->where('produk.jenis=jenis.id');
             $this->db->where("produk.id ='" . $id . "'");
             return $this->db->get()->result_array();
+        }
+    }
+
+    public function newProduct()
+    {
+        $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+        $this->db->from('produk');
+        $this->db->from('gambar');
+        $this->db->from('kategori');
+        $this->db->where('gambar.main_gambar = 1');
+        $this->db->where('produk.kategori=kategori.id');
+        $this->db->where('gambar.id_produk=produk.id');
+        $this->db->order_by("produk.created_at DESC");
+        $this->db->limit(10);
+        return $this->db->get()->result_array();
+    }
+
+    public function mostViewProduct()
+    {
+        $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+        $this->db->from('produk');
+        $this->db->from('gambar');
+        $this->db->from('kategori');
+        $this->db->where('gambar.main_gambar = 1');
+        $this->db->where('produk.kategori=kategori.id');
+        $this->db->where('gambar.id_produk=produk.id');
+        $this->db->order_by("visitor DESC");
+        $this->db->limit(10);
+        return $this->db->get()->result_array();
+    }
+
+    public function getProducts($limit, $start, $keyword = null)
+    {
+        if ($keyword) {
+            $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+            $this->db->from('produk');
+            $this->db->from('gambar');
+            $this->db->from('kategori');
+            $this->db->where('gambar.main_gambar = 1');
+            $this->db->where('produk.kategori=kategori.id');
+            $this->db->where('gambar.id_produk=produk.id');
+            $this->db->group_by('produk.id');
+            $this->db->like('nama', $keyword);
+            //$this->db->or_like('kategori.kategori', $keyword);
+            return $this->db->get('', $limit, $start)->result_array();
+        } else {
+            $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+            $this->db->from('produk');
+            $this->db->from('gambar');
+            $this->db->from('kategori');
+            $this->db->where('gambar.main_gambar = 1');
+            $this->db->where('produk.kategori=kategori.id');
+            $this->db->where('gambar.id_produk=produk.id');
+            $this->db->group_by('produk.id');
+            return $this->db->get('', $limit, $start)->result_array();
         }
     }
 
@@ -50,5 +106,26 @@ class produkModel extends CI_Model
     {
         $this->db->update('produk', $data, ['id' => $id]);
         return $this->db->affected_rows();
+    }
+
+    public function countProducts()
+    {
+        return $this->db->get('produk')->num_rows();
+    }
+
+    function update_counter($id)
+    {
+
+        //return current article views
+        $this->db->where('id', urldecode($id));
+        $this->db->select('visitor');
+        $count = $this->db->get('produk')->row();
+        // then increase by one
+        /*if (empty($count)) {
+           redirect();
+        }*/
+        $this->db->where('id', urldecode($id));
+        $this->db->set('visitor', ($count->visitor + 1));
+        $this->db->update('produk');
     }
 }

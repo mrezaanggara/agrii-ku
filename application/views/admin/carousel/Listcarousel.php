@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- end edit gambar -->
+                <!-- end edit carousel -->
 
             </div>
 

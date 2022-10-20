@@ -90,21 +90,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                            echo form_open('keranjang/add');
+                            echo form_hidden('id', $produk['id']);
+                            echo form_hidden('name', $produk['nama']);
+                            echo form_hidden('price', $produk['harga']);
+                            echo form_hidden('redirect_page', current_url())
+                            ?>
                             <div class="card-footer">
-                                <div class="row mt-2">
-                                    <div class="col-6">
-                                        <div align="start">
-                                            <p>Harga : Rp. 20.000,00</p>
-                                        </div>
+
+                                <div class="row d-flex justify-content-around align-items-center">
+                                    <div class="col-sm-4">
+                                        <a>Harga : <?= rupiah($produk['harga']); ?></a>
                                     </div>
-                                    <div class="col-6">
-                                        <div align="end">
-                                            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                                                <i class="fa fa-plus fa-sm text-white-50"></i>Keranjang</a>
-                                        </div>
+                                    <div class="col-sm-2">
+                                        <input type="number" name="qty" class="form-control" value="1" min="1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="d-none d-sm-inline-block btn btn-success btn-sm swalDefaultSuccess" style="font-size:medium; color:white;">
+                                            <i class="fas fa-cart-plus fa-sm"></i>
+                                            Keranjang
+                                        </button>
                                     </div>
                                 </div>
+
                             </div>
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>
@@ -129,6 +140,21 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+    });
+    $(function() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000
+        });
+
+        $('.swalDefaultSuccess').click(function() {
+            Toast.fire({
+                type: 'success',
+                title: 'Barang berhasil ditambahkan ke keranjang..'
+            })
+        });
     });
 </script>
 

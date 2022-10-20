@@ -8,6 +8,8 @@
 <!-- Custom scripts for all pages-->
 <script src="<?php echo base_url('assets/vendor/sb-admin-2.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/vendor/swiper-bundle.min.js') ?>"></script>
+<!-- SweetAlert2 -->
+<script src="<?php echo base_url('assets/vendor/sweetalert2/sweetalert2.min.js') ?>"></script>
 
 <!-- Page level plugins -->
 <script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js') ?>"></script>

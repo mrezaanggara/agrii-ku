@@ -52,22 +52,22 @@
 }
 
 .stock{
-    height: 25px;
+    height: 38px;
     width: 90px;
     border: none;
     font-size: 11px;
     color: white;
-    padding: 6px 14px;
+    padding: 12px 14px;
     background-color: #248b3c;
 }
 
 .stock-habis{
-    height: 25px;
+    height: 38px;
     width: 90px;
     border: none;
     font-size: 11px;
     color: white;
-    padding: 6px 14px;
+    padding: 12px 14px;
     background-color: red;
 }
 

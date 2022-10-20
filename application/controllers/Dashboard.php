@@ -5,6 +5,14 @@ class Dashboard extends CI_Controller
 {
 	public function index()
 	{
+		$data = [
+			'title' => 'Agrii-ku',
+		];
+		$this->load->view('splashscreen', $data);
+	}
+
+	public function home()
+	{
 		$this->load->model('carouselModel', 'carousel');
 		$this->load->model('jenisModel', 'jenis');
 		$this->load->model('kategoriModel', 'kategori');

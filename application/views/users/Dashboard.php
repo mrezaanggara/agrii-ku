@@ -7,11 +7,6 @@
 
 <body>
 
-    <div class="splash" id="splash">
-        <!-- <h2 class="fade-in"></h2> -->
-        <img class="fade-in" src="<?php echo base_url("data/agriiku.png") ?>" style="width: 700px;">
-    </div>
-
     <!-- Main Content -->
     <div class="content">
 
@@ -106,6 +101,14 @@
                     <div class="card-wrapper swiper-wrapper">
                         <?php foreach ($produk as $produk) { ?>
                             <div class="card swiper-slide card-post card-post">
+                                <?php
+                                echo form_open('keranjang/add');
+                                echo form_hidden('id', $produk['id']);
+                                echo form_hidden('name', $produk['nama']);
+                                echo form_hidden('qty', 1);
+                                echo form_hidden('price', $produk['harga']);
+                                echo form_hidden('redirect_page', current_url());
+                                ?>
                                 <div class="image-content">
                                     <div class="card-image">
                                         <a href="<?php echo base_url('catalogue/item/') . $produk['id']; ?>">
@@ -122,17 +125,24 @@
                                             <?= rupiah($produk['harga']); ?>
                                         </div>
                                         <hr>
+                                    </a>
+                                    <div class="row d-flex justify-content-around align-items-center">
                                         <?php if ($produk['stok'] != 0) { ?>
                                             <div class="stock rounded">
                                                 Stok | <?= $produk['stok']; ?>
                                             </div>
+                                            <button type="submit" class="btn swalDefaultSuccess" style="font-size:medium; color:#248b3c;">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
                                         <?php } else { ?>
                                             <div class="stock-habis rounded">
                                                 Stok | Habis
                                             </div>
+                                            <div></div>
                                         <?php }; ?>
-                                    </a>
+                                    </div>
                                 </div>
+                                <?php echo form_close(); ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -155,6 +165,14 @@
                     <div class="card-wrapper swiper-wrapper">
                         <?php foreach ($produk_dilihat as $mostproduk) { ?>
                             <div class="card swiper-slide card-post card-post">
+                                <?php
+                                echo form_open('keranjang/add');
+                                echo form_hidden('id', $produk['id']);
+                                echo form_hidden('name', $produk['nama']);
+                                echo form_hidden('qty', 1);
+                                echo form_hidden('price', $produk['harga']);
+                                echo form_hidden('redirect_page', current_url())
+                                ?>
                                 <div class="image-content">
                                     <div class="card-image">
                                         <a href="<?php echo base_url('catalogue/item/') . $mostproduk['id']; ?>">
@@ -165,23 +183,30 @@
                                 <div class="card-body card-content">
                                     <a href="<?php echo base_url('catalogue/item/') . $mostproduk['id']; ?>">
                                         <div class="name text-ellipsis">
-                                            <?= $mostproduk['nama']; ?>
+                                            <?= $produk['nama']; ?>
                                         </div>
                                         <div class="price">
                                             <?= rupiah($mostproduk['harga']); ?>
                                         </div>
                                         <hr>
+                                    </a>
+                                    <div class="row d-flex justify-content-around align-items-center">
                                         <?php if ($mostproduk['stok'] != 0) { ?>
                                             <div class="stock rounded">
                                                 Stok | <?= $mostproduk['stok']; ?>
                                             </div>
+                                            <button type="submit" class="btn swalDefaultSuccess" style="font-size:medium; color:#248b3c;">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
                                         <?php } else { ?>
                                             <div class="stock-habis rounded">
                                                 Stok | Habis
                                             </div>
+                                            <div></div>
                                         <?php }; ?>
-                                    </a>
+                                    </div>
                                 </div>
+                                <?php echo form_close() ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -252,10 +277,20 @@
             }
         }
     });
-    $(document).ready(function() {
-        setTimeout(function() {
-            $("#splash").remove();
-        }, 2000);
+    $(function() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000
+        });
+
+        $('.swalDefaultSuccess').click(function() {
+            Toast.fire({
+                type: 'success',
+                title: 'Barang berhasil ditambahkan ke keranjang..'
+            })
+        });
     });
 </script>
 

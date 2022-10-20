@@ -19,12 +19,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white small" href="<?php echo base_url('cart'); ?>">
-                    <i class="fas fa-cart-shopping fa-fw" style="color: white"></i>
-                    Keranjang
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link text-white small" href="<?php echo base_url('article'); ?>">
                     <i class="fa-solid fa-newspaper fa-fw" style="color: white"></i>
                     Artikel
@@ -35,7 +29,18 @@
                     Tentang Kami
                 </a>
             </li>
-
+            <?php
+            $cart = $this->cart->contents();
+            $items = 0;
+            foreach ($cart as $key => $value) {
+                $items = $items + $value['qty'];
+            }
+            ?>
+            <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 14px;" href="<?php echo base_url('keranjang'); ?>">
+                    <i class="fas fa-cart-shopping fa-fw" style="color: white"><span class="badge badge-danger badge-counter"><?= $items; ?></span></i>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

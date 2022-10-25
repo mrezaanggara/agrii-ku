@@ -26,7 +26,7 @@ class Artikel extends CI_Controller
         if ($this->form_validation->run() == TRUE) {
             $data = array(
                 'title' => $this->input->post('title'),
-                'content' => $this->input->post('content'),
+                'content' => str_replace('&nbsp;', ' ', $this->input->post('content')),
                 'kategori' => $this->input->post('kategori'),
                 'created_at' => (new DateTime('now'))->format('Y-m-d H:i:s')
             );
@@ -60,7 +60,7 @@ class Artikel extends CI_Controller
             $id = $this->input->post('id');
             $data = array(
                 'title' => $this->input->post('title'),
-                'content' => $this->input->post('content'),
+                'content' => str_replace('&nbsp;', ' ', $this->input->post('content')),
                 'kategori' => $this->input->post('kategori'),
             );
             $this->artikel->updateArticle($data, $id);

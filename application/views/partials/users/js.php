@@ -15,3 +15,15 @@
 <script src="<?php echo base_url('assets/vendor/chart.js/Chart.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/vendor/datatables/dataTables.min.js') ?>"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    document.querySelectorAll('oembed[url]').forEach(element => {
+        // Create the <a href="..." class="embedly-card"></a> element that Embedly uses
+        // to discover the media.
+        const anchor = document.createElement('a');
+
+        anchor.setAttribute('href', element.getAttribute('url'));
+        anchor.className = 'embedly-card';
+
+        element.appendChild(anchor);
+    });
+</script>

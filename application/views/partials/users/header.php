@@ -11,6 +11,7 @@
 <link href="<?php echo base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 <link rel="icon" href="<?php echo site_url('data/agriiku.png') ?>" type="image/x-icon">
 <link href="<?php echo base_url('assets/css/style.min.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/content-styles.css') ?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('assets/css/swiper-bundle.min.css') ?>" rel="stylesheet">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?php echo base_url('assets/vendor/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') ?>">
@@ -18,5 +19,5 @@
 <!-- Custom styles for this page -->
 <link href="<?php echo base_url('assets/vendor/datatables/datatables.min.css') ?>" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-<script charset="utf-8" src="https://cdn.iframe.ly/embed.js?api_key=2ca692203b33bf539021f4"></script>
+<script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

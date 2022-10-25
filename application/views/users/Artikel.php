@@ -18,38 +18,32 @@
 
             <!-- Page Heading -->
             <div class="container">
-                <h3 class="h3 mb-2 text-gray-800">Artikel</h3>
+                <h3 class="h3 mb-2 text-gray-800">Daftar Artikel</h3>
+                <br>
                 <div class="row">
                     <div class="col-md-8">
-                        <?php foreach ($artikel as $artikel) : ?>
+                        <?php $i = 1;
+                        foreach ($artikel as $artikel) : ?>
                             <div class="card">
-                                <div class="card-body">
-                                    <?= $artikel['id']; ?>
-                                </div>
+                                <a href="<?php echo site_url('article/detail/') . $artikel['id'] ?>">
+                                    <div class="card-body text-gray-800">
+                                        <div class="col">
+                                            <div class="row">
+                                                <?= ++$start; ?>.
+                                                <?= $artikel['title']; ?>
+                                            </div>
+                                            <div class="row">
+                                                kategori : <?= $artikel['kategori']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                             <br>
                         <?php endforeach; ?>
                         <?= $this->pagination->create_links(); ?>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                Instagram
-                            </div>
-                        </div>
-                        <br>
-                        <div class="card">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                Facebook
-                            </div>
-                        </div>
-                        <br>
-                        <div class="card">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                Twitter
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

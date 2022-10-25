@@ -26,23 +26,21 @@
                         <?php endforeach; ?>
                     </div>
                     <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                Instagram
+                        <?php foreach ($sosmed as $sosmed) : ?>
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex justify-content-center">
+                                    <a><?= $sosmed['jenis']; ?> : </a>
+                                    <?php if ($sosmed['jenis'] == 'Official Website') { ?>
+                                        <a href="<?= $sosmed['nama']; ?>" target="_blank"> <?= $sosmed['nama']; ?></a>
+                                    <?php } else if ($sosmed['jenis'] == 'Instagram') { ?>
+                                        <a href="https://www.instagram.com/<?= $sosmed['nama']; ?>" target="_blank"> <?= $sosmed['nama']; ?></a>
+                                    <?php } else if ($sosmed['jenis'] == 'Facebook') { ?>
+                                        <a href="https://web.facebook.com/<?= $sosmed['nama']; ?>" target="_blank"> <?= $sosmed['nama']; ?></a>
+                                    <?php }; ?>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="card">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                Facebook
-                            </div>
-                        </div>
-                        <br>
-                        <div class="card">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                Twitter
-                            </div>
-                        </div>
+                            <br>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

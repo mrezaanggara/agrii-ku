@@ -163,14 +163,14 @@
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
-                        <?php foreach ($produk_dilihat as $mostproduk) { ?>
+                        <?php foreach ($dilihat as $mostproduk) { ?>
                             <div class="card swiper-slide card-post card-post">
                                 <?php
                                 echo form_open('keranjang/add');
-                                echo form_hidden('id', $produk['id']);
-                                echo form_hidden('name', $produk['nama']);
+                                echo form_hidden('id', $mostproduk['id']);
+                                echo form_hidden('name', $mostproduk['nama']);
                                 echo form_hidden('qty', 1);
-                                echo form_hidden('price', $produk['harga']);
+                                echo form_hidden('price', $mostproduk['harga']);
                                 echo form_hidden('redirect_page', current_url())
                                 ?>
                                 <div class="image-content">
@@ -183,7 +183,7 @@
                                 <div class="card-body card-content">
                                     <a href="<?php echo base_url('catalogue/item/') . $mostproduk['id']; ?>">
                                         <div class="name text-ellipsis">
-                                            <?= $produk['nama']; ?>
+                                            <?= $mostproduk['nama']; ?>
                                         </div>
                                         <div class="price">
                                             <?= rupiah($mostproduk['harga']); ?>

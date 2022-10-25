@@ -53,7 +53,7 @@
                                         <td style="text-align:right">Rp. <?php echo $this->cart->format_number($items['price']); ?></td>
                                         <td style="text-align:right">Rp. <?php echo $this->cart->format_number($items['subtotal']); ?></td>
                                         <td style="text-align:center">
-                                            <a type="button" href="<?php echo site_url('keranjang/delete/' . $items['rowid']); ?>" class="btn btn-sm btn-danger">
+                                            <a type="button" href="<?php echo site_url('keranjang/delete/' . $items['rowid'] . '/' . $items['id'] . '/' . $items['qty']); ?>" class="btn btn-sm btn-danger">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </td>

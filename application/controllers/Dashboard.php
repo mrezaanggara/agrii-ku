@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller
 		$data['jenis'] = $this->jenis->getJenis();
 		$data['kategori'] = $this->kategori->getKategori();
 		$data['produk'] = $this->produk->newProduct();
-		$data['produk_dilihat'] = $this->produk->mostViewProduct();
+		$data['dilihat'] = $this->produk->mostViewProduct();
 		$this->load->view('users/dashboard', $data);
 	}
 }

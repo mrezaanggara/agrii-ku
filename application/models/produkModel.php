@@ -90,6 +90,15 @@ class produkModel extends CI_Model
         return $query;
     }
 
+    public function getStok($id)
+    {
+        $this->db->select('stok');
+        $this->db->from('produk');
+        $this->db->where("produk.id ='" . $id . "'");
+        $query = $this->db->get()->row();
+        return $query;
+    }
+
     public function addProduct($data)
     {
         $this->db->insert('produk', $data);

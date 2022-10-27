@@ -31,7 +31,7 @@
                                 <div class="card-body align-items-center d-flex justify-content-center">
                                     <a><?= $sosmed['jenis']; ?> : </a>
                                     <?php if ($sosmed['jenis'] == 'Official Website') { ?>
-                                        <a href="<?= $sosmed['nama']; ?>" target="_blank"> <?= $sosmed['nama']; ?></a>
+                                        <a href="<?= $sosmed['nama']; ?>" target="_blank"> Agribisnis unila</a>
                                     <?php } else if ($sosmed['jenis'] == 'Instagram') { ?>
                                         <a href="https://www.instagram.com/<?= $sosmed['nama']; ?>" target="_blank"> <?= $sosmed['nama']; ?></a>
                                     <?php } else if ($sosmed['jenis'] == 'Facebook') { ?>

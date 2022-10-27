@@ -18,11 +18,7 @@
                     <p><i class="fas fa-location-dot"></i> Gedung N Agribisnis, Universitas Lampung,Fakultas Pertanian</p>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="row" style="height: 45px;">Belanja Produk</div>
-                <div class="row" style="height: 25px;"><a><i class="fas fa-store"></i> Store</a></div>
-                <div class="row" style="height: 25px;"><a><i class="fas fa-earth"></i> Website</a></div>
-            </div>
+
         </div>
         <br>
         <div class="copyright my-auto text-center text-white">

@@ -27,11 +27,11 @@
                     </div>
                     <br>
                     <div class="card">
+                        <div class="card-header text-primary">
+                            Kategori : <?= $artikel['kategori']; ?>
+                        </div>
                         <div class="card-body">
                             <?= $artikel['content']; ?>
-                        </div>
-                        <div class="card-footer text-primary">
-                            Kategori : <?= $artikel['kategori']; ?>
                         </div>
                     </div>
                 </div>

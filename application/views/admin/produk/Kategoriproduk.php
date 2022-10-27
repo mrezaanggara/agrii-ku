@@ -99,7 +99,7 @@
                     </div>
                 </div>
 
-                <!-- Modal edit stok dan status -->
+                <!-- Modal edit kategori -->
                 <div class="modal fade" id="modal_edit" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- end edit stok dan status -->
+                <!-- end edit kategori -->
 
             </div>
 

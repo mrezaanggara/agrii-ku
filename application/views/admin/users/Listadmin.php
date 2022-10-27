@@ -41,36 +41,43 @@
                                                     <th>Username</th>
                                                     <th>Nama</th>
                                                     <th>Role</th>
+                                                    <th>Created at</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
                                                 $no = 1;
+                                                foreach ($users as $user) :
                                                 ?>
-                                                <tr>
-                                                    <td width="80">
-                                                        <?= $no++; ?>
-                                                    </td>
-                                                    <td width="200">
-                                                        adad
-                                                    </td>
-                                                    <td width="200">
-                                                        adad
-                                                    </td>
-                                                    <td width="200">
-                                                        adaa
-                                                    </td>
-                                                    <td width="50">
-                                                        <a type="button" href="<?php echo site_url("produk/detail/") ?>" class="btn btn-sm btn-success">
-                                                            <i class="fas fa-info"></i>
-                                                        </a>
-                                                        <a type="button" class="btn btn-sm btn-danger" href="">
-                                                            <i class="fas fa-trash"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-
+                                                    <tr>
+                                                        <td width="80">
+                                                            <?= $no++; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?= $user['username']; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?= $user['nama']; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?= $user['role']; ?>
+                                                        </td>
+                                                        <td width="200">
+                                                            <?= formatTanggal($user['created_at']); ?>
+                                                        </td>
+                                                        <td width="50">
+                                                            <a type="button" onClick="show_modal('<?php echo $user['id'] ?>','<?php echo $user['nama'] ?>','<?php echo $user['username'] ?>')" class="btn btn-sm btn-success text-white">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                            <?php if ($user['role'] != 'superadmin') { ?>
+                                                                <a type="button" class="btn btn-sm btn-danger" href="<?php echo site_url("admin/users/hapususers/" . $user['id']); ?>">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -79,6 +86,58 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal edit users -->
+                <div class="modal fade" id="modal_edit" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Update users</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="<?php echo site_url('admin/users/editusers') ?>" method="post" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <input type="text" id="id" name="id" class="form-control" placeholder="id" required="required" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Username Login</label>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="password">Password baru</label>
+                                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="role">Role</label>
+                                                <select class="form-control" name="role" aria-label="Default select example" required>
+                                                    <option selected>Pilih Role</option>
+                                                    <option value="superadmin">Super Admin</option>
+                                                    <option value="admin">Admin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" name="edit">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end edit users -->
 
             </div>
 
@@ -96,6 +155,12 @@
 
 </body>
 <script type="text/javascript">
+    function show_modal(a, b, c) {
+        document.getElementById('id').value = a;
+        document.getElementById('nama').value = b;
+        document.getElementById('username').value = c;
+        $("#modal_edit").modal('show');
+    }
     $(document).ready(function() {
         $('#tables').DataTable();
     });

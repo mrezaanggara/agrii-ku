@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#248b3c ;">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#80a571 ;">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('/admin/dashboard') ?>">
@@ -77,7 +77,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Users Admin:</h6>
                 <a class="collapse-item" href="<?php echo site_url('admin/users') ?>">Semua Users Admin</a>
-                <a class="collapse-item" href="utilities-border.html">Tambah Users Admin</a>
+                <a class="collapse-item" href="<?php echo site_url('admin/users/addusers') ?>">Tambah Users Admin</a>
             </div>
         </div>
     </li>

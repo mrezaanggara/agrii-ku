@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 09:39 AM
+-- Generation Time: Oct 27, 2022 at 10:43 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.4.29
 
@@ -283,15 +283,17 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `role` varchar(100) NOT NULL
+  `role` varchar(100) NOT NULL,
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `nama`, `role`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'administrator', 'superadmin');
+INSERT INTO `users` (`id`, `username`, `password`, `nama`, `role`, `created_at`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'administrator', 'superadmin', '2022-10-04'),
+(3, 'anggaaa', '1fd5cd9766249f170035b7251e2c6b61', 'Muhammad Reza Anggara', 'admin', '2022-10-27');
 
 --
 -- Indexes for dumped tables
@@ -435,7 +437,7 @@ ALTER TABLE `sosmed`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

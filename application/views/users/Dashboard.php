@@ -170,6 +170,7 @@
         <!-- end swiper produk terbaru -->
 
         <br>
+        <br>
 
         <!-- swiper produk terlaris -->
         <div class="container">
@@ -237,7 +238,7 @@
 
         <!-- cara pemesanan -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-900 bold text-center">Cara Pemesanan</h5>
+            <h5 class="h5 mb-2 text-gray-900 bold text-center font-weight-bold">Cara Pemesanan</h5>
             <div class="row">
                 <div class="col-md-3">
                     <div class="row d-flex justify-content-around align-items-center">
@@ -273,7 +274,7 @@
 
         <!-- mitra -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-900 bold text-center">Mitra</h5>
+            <h5 class="h5 mb-2 text-gray-900 bold text-center font-weight-bold">Mitra</h5>
             <div class="row justify-content-md-center">
 
                 <div class="col-md-3">

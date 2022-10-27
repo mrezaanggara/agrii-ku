@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#248b3c; z-index: 15;" id="navbar">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow sticky" style="background-color:#80a571; z-index: 15;" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>"><img src="<?php echo site_url('data/icon.png') ?>" alt="" height="60px"></a>
         <form class="ml-md-3 navbar-search" action="<?php echo base_url('catalogue/search') ?>" method="post">

@@ -14,7 +14,6 @@
 
         <!--content -->
         <div class="container">
-
             <!-- banner iklan -->
             <div class="row">
                 <div class="col">
@@ -57,7 +56,23 @@
         </div>
         <!-- end banner iklan -->
 
-        <br>
+        <!-- deskripsi -->
+        <div class="container">
+            <br>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="200">
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <p class="text-center">
+                    Inovasi kewirausahaan unggulan dalam bidang pertanian yang menyediakan berbagai produk pertanian
+                    baik dari mahasiswa maupun mitra lainnya. Memiliki visi yaitu menjadi penggerak teknologi kreatif
+                    kewirausahaan mahasiswa serta misi yaitu menjalankan <strong>Agri Corner</strong> dan marketplace
+                    <strong>Agriiku</strong> dengan inovasinya.
+                </p>
+            </div>
+            <br>
+        </div>
+        <!-- end deskripsi -->
 
         <!-- kategori produk -->
         <div class="container">
@@ -95,7 +110,8 @@
 
         <!-- swiper produk terbaru -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-800 bold">Produk Terbaru</h5>
+            <h5 class="h5 mb-2 text-gray-900 bold text-center">Produk Terbaru</h5>
+            <br>
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
@@ -153,13 +169,12 @@
         </div>
         <!-- end swiper produk terbaru -->
 
-        <div class="container">
-            <hr class="divider">
-        </div>
+        <br>
 
         <!-- swiper produk terlaris -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-800 bold">Produk Sering Dilihat</h5>
+            <h5 class="h5 mb-2 text-gray-900 bold text-center">Produk Sering Dilihat</h5>
+            <br>
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
@@ -216,6 +231,61 @@
             </div>
         </div>
         <!-- end swiper produk terlaris -->
+
+        <br>
+        <br>
+
+        <!-- cara pemesanan -->
+        <div class="container">
+            <h5 class="h5 mb-2 text-gray-900 bold text-center">Cara Pemesanan</h5>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row d-flex justify-content-around align-items-center">
+                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
+                        <a class="text-gray-900">Mencari Produk</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row  d-flex justify-content-around align-items-center">
+                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
+                        <a class="text-gray-900">Hubungi Kami</a>
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="row d-flex justify-content-around align-items-center">
+                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
+                        <a class="text-gray-900">Pesan dan Bayar </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row  d-flex justify-content-around align-items-center">
+                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
+                        <a class="text-gray-900">Pengiriman</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end cara pemesanan -->
+
+        <div class="container">
+            <hr class="divider">
+        </div>
+
+        <!-- mitra -->
+        <div class="container">
+            <h5 class="h5 mb-2 text-gray-900 bold text-center">Mitra</h5>
+            <div class="row justify-content-md-center">
+
+                <div class="col-md-3">
+                    <div class="row d-flex justify-content-around align-items-center">
+                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
+                        <a class="text-gray-900"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end mitra -->
 
     </div>
 

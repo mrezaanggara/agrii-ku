@@ -86,7 +86,6 @@
 
     </div>
 
-    <?php $this->load->view('partials/users/footer') ?>
     <?php $this->load->view('partials/users/js') ?>
 
 </body>

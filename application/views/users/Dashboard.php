@@ -110,7 +110,7 @@
 
         <!-- swiper produk terbaru -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-900 bold text-center">Produk Terbaru</h5>
+            <h5 class="h5 mb-2 text-gray-900 bold text-center font-weight-bold">Produk Terbaru</h5>
             <br>
             <div class="slide-container swiper">
                 <div class="slide-content">
@@ -174,7 +174,7 @@
 
         <!-- swiper produk terlaris -->
         <div class="container">
-            <h5 class="h5 mb-2 text-gray-900 bold text-center">Produk Sering Dilihat</h5>
+            <h5 class="h5 mb-2 text-gray-900 bold text-center font-weight-bold">Produk Sering Dilihat</h5>
             <br>
             <div class="slide-container swiper">
                 <div class="slide-content">

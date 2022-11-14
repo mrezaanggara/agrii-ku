@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('partials/users/header'); ?>
+    <?php $this->load->view('partials/users/header') ?>
     <meta http-equiv="refresh" content="3;url=<?php echo base_url('dashboard/home') ?>">
 </head>
 
@@ -25,7 +25,7 @@
 
     <!--scrolltop.php -->
     <!--modal.php -->
-    <?php $this->load->view('partials/users/js'); ?>
+    <?php $this->load->view('partials/users/js') ?>
 
 </body>
 <script type="text/javascript">

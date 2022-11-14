@@ -1,5 +1,8 @@
 <!-- Footer -->
-<footer class="sticky-footer" style="background-color: #80a571;">
+<div style="height:188px;padding: 2rem 0;">
+
+</div>
+<footer class="sticky-footer" style="background-color: #80a571; position:absolute">
     <div class="container my-auto text-white">
         <h5>Welcome to Our Website:</h5>
         <div class="row" style="font-size: 15px;">

@@ -72,7 +72,7 @@
 
                             </table>
                             <p>
-                                <a aria-label="Chat on WhatsApp" href="https://wa.me/6282280814761?text=Saya ingin membeli: %0A%0A<?= $barang ?>%0A%0ATotal Harga: Rp.<?php echo $this->cart->format_number($this->cart->total()); ?>" target="_blank">
+                                <a aria-label="Chat on WhatsApp" href="https://wa.me/6281263119830?text=Saya ingin membeli: %0A%0A<?= $barang ?>%0A%0ATotal Harga: Rp.<?php echo $this->cart->format_number($this->cart->total()); ?>" target="_blank">
                                     <img alt="Chat on WhatsApp" src="<?php echo site_url('data/WhatsAppButtonGreenSmall.png') ?>" height="40px">
                                 </a>
                             </p>

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<div style="height:188px;padding: 2rem 0;">
+<div style="height:288px;padding: 2rem 0;">
 
 </div>
 <footer class="sticky-footer" style="background-color: #80a571; position:absolute">

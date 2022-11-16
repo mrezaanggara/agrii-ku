@@ -17,34 +17,41 @@
         <div class="container-fluid">
 
             <!-- Page Heading -->
-            <div class="container">
+            <div class="container" align="center">
                 <h3 class="h3 mb-2 text-gray-800">Daftar Artikel</h3>
                 <br>
-                <div class="row">
-                    <div class="col-md-8">
-                        <?php $i = 1;
-                        foreach ($artikel as $artikel) : ?>
-                            <div class="card">
-                                <a href="<?php echo site_url('article/detail/') . $artikel['id'] ?>">
-                                    <div class="card-body text-gray-800">
-                                        <div class="col">
-                                            <div class="row">
-                                                <?= ++$start; ?>.
-                                                <?= $artikel['title']; ?>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-11">
+                                <?php $i = 1;
+                                foreach ($artikel as $artikel) : ?>
+                                    <div class="card bg-light border-success">
+                                        <a class="text-success" href="<?php echo site_url('article/detail/') . $artikel['id'] ?>">
+                                            <div class="card-body ">
+                                                <div class="row d-flex justify-content-around align-items-center">
+                                                    <div class="col-md-8">
+                                                        <div class="row text-gray-800">
+                                                            <?= ++$start; ?>.
+                                                            <?= $artikel['title']; ?>
+                                                        </div>
+                                                        <div class="row">
+                                                            kategori : <?= $artikel['kategori']; ?>
+                                                        </div>
+                                                    </div>
+                                                    <i class="fa-solid fa-newspaper fa-fw"></i>
+                                                </div>
                                             </div>
-                                            <div class="row">
-                                                kategori : <?= $artikel['kategori']; ?>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </a>
+                                    <br>
+                                <?php endforeach; ?>
+                                <?= $this->pagination->create_links(); ?>
                             </div>
-                            <br>
-                        <?php endforeach; ?>
-                        <?= $this->pagination->create_links(); ?>
+                        </div>
                     </div>
-
                 </div>
+                <br>
             </div>
 
         </div>

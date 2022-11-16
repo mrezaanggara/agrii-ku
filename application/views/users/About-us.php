@@ -22,7 +22,11 @@
                 <div class="row">
                     <div class="col-md-8">
                         <?php foreach ($about as $about) : ?>
-                            <?= $about['content']; ?>
+                            <div class="card">
+                                <div class="card-body">
+                                    <?= $about['content']; ?>
+                                </div>
+                            </div>
                         <?php endforeach; ?>
                     </div>
                     <div class="col-md-4">
@@ -44,6 +48,7 @@
                     </div>
                 </div>
             </div>
+            <br>
 
         </div>
         <!-- /.container -->

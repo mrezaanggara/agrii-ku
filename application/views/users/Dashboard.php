@@ -84,14 +84,14 @@
                                 <?php foreach ($jenis as $jenis) : ?>
                                     <?php if ($jenis['status'] != 0) { ?>
                                         <div class="swiper-slide">
-                                            <a class="kategori text-white rounded" type="button"><?= $jenis['jenis']; ?></a>
+                                            <a href="<?php echo base_url('catalogue/jenis/') . $jenis['jenis']; ?>" class="kategori text-white rounded" type="button"><?= $jenis['jenis']; ?></a>
                                         </div>
                                     <?php } ?>
                                 <?php endforeach; ?>
                                 <?php foreach ($kategori as $kategori) : ?>
                                     <?php if ($kategori['status'] != 0) { ?>
                                         <div class="swiper-slide">
-                                            <a class="kategori text-white rounded" type="button"><?= $kategori['kategori']; ?></a>
+                                            <a href="<?php echo base_url('catalogue/category/') . $kategori['kategori']; ?>" class="kategori text-white rounded" type="button"><?= $kategori['kategori']; ?></a>
                                         </div>
                                     <?php } ?>
                                 <?php endforeach; ?>

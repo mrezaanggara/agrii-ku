@@ -27,22 +27,85 @@ class Catalogue extends CI_Controller
         $this->load->view('users/semuaproduk', $data);
     }
 
+    public function category($category)
+    {
+        $data = [
+            'title' => 'Agrii-ku | Categories',
+            'laman' => 'Kategori Produk',
+        ];
+        $this->load->model('produkModel', 'produk');
+        //load library
+        $this->load->library('pagination');
+
+        //ambil data kategori
+        $data['keyword'] = $category;
+
+        //config
+        $config['base_url'] = 'http://localhost/agrii-ku/catalogue/category/' . $category;
+        $this->db->like('kategori.kategori', $data['keyword']);
+        $this->db->from('produk');
+        $this->db->from('kategori');
+        $this->db->where('produk.kategori = kategori.id');
+        $config['total_rows'] = $this->db->count_all_results();
+        $config['per_page'] = 10;
+
+        //initialize
+        $this->pagination->initialize($config);
+
+        $data['start'] = $this->uri->segment(4);
+        $data['produk'] = $this->produk->productCategories($config['per_page'], $data['start'], $data['keyword']);
+        $this->load->view('users/semuaproduk', $data);
+    }
+
+    public function jenis($jenis)
+    {
+        $data = [
+            'title' => 'Agrii-ku | Jenis',
+            'laman' => 'Jenis Produk',
+        ];
+        $this->load->model('produkModel', 'produk');
+        //load library
+        $this->load->library('pagination');
+
+        //ambil data kategori
+        $data['keyword'] = $jenis;
+
+        //config
+        $config['base_url'] = 'http://localhost/agrii-ku/catalogue/jenis/' . $jenis;
+        $this->db->like('jenis.jenis', $data['keyword']);
+        $this->db->from('produk');
+        $this->db->from('jenis');
+        $this->db->where('produk.jenis = jenis.id');
+        $config['total_rows'] = $this->db->count_all_results();
+        $config['per_page'] = 10;
+
+        //initialize
+        $this->pagination->initialize($config);
+
+        $data['start'] = $this->uri->segment(4);
+        $data['produk'] = $this->produk->productJenis($config['per_page'], $data['start'], $data['keyword']);
+        $this->load->view('users/semuaproduk', $data);
+    }
+
     public function search()
     {
         $data = [
-            'title' => 'Agrii-ku | Katalog',
-            'laman' => 'Produk',
+            'title' => 'Agrii-ku | Search Product',
+            'laman' => 'Pencarian Produk',
         ];
         $this->load->model('produkModel', 'produk');
         //load library
         $this->load->library('pagination');
 
         //ambil data keyword
-        if ($this->input->post('submit')) {
-            $data['keyword'] = $this->input->post('keyword');
+        $data['keyword'] = $this->input->post('keyword');
+        if ($data['keyword'] != null) {
             $this->session->set_userdata('keyword', $data['keyword']);
         } else {
-            $data['keyword'] = $this->session->userdata('keyword');
+            echo "<script>
+					alert('Kata kunci tidak boleh kosong..');
+					window.location='" . site_url('catalogue/allproduct') . "';
+				</script>";
         }
 
         //config

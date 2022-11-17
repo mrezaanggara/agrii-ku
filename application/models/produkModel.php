@@ -80,6 +80,37 @@ class produkModel extends CI_Model
         }
     }
 
+    public function productCategories($limit, $start, $keyword)
+    {
+        $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+        $this->db->from('produk');
+        $this->db->from('gambar');
+        $this->db->from('kategori');
+        $this->db->where('gambar.main_gambar = 1');
+        $this->db->where('produk.kategori=kategori.id');
+        $this->db->where('gambar.id_produk=produk.id');
+        $this->db->group_by('produk.id');
+        $this->db->like('kategori.kategori', $keyword);
+        return $this->db->get('', $limit, $start)->result_array();
+    }
+
+    public function productJenis($limit, $start, $keyword)
+    {
+        $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori,jenis.jenis');
+        $this->db->from('produk');
+        $this->db->from('gambar');
+        $this->db->from('kategori');
+        $this->db->from('jenis');
+        $this->db->where('gambar.main_gambar = 1');
+        $this->db->where('produk.kategori=kategori.id');
+        $this->db->where('produk.jenis=jenis.id');
+        $this->db->where('gambar.id_produk=produk.id');
+        $this->db->group_by('produk.id');
+        $this->db->like('jenis.jenis', $keyword);
+        //$this->db->or_like('kategori.kategori', $keyword);
+        return $this->db->get('', $limit, $start)->result_array();
+    }
+
     public function getId()
     {
         $this->db->select('*');

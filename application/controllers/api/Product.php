@@ -18,12 +18,75 @@ class Product extends REST_Controller
         $this->load->model('kategoriModel', 'kategori');
     }
 
-    public function allProduk_get()
+    public function newProduct_get()
+    {
+        $newProduct = $this->produk->newProduct();
+        foreach ($newProduct as $value) {
+            $data[] = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'harga' => rupiah($value['harga']),
+                'kategori' => $value['kategori'],
+                'stok' => $value['stok'],
+                'maingambar' => $value['gambar'],
+            ];
+        }
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'No data were found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
+    public function mostViewProduct_get()
+    {
+        $Product = $this->produk->mostViewProduct();
+        foreach ($Product as $value) {
+            $data[] = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'harga' => rupiah($value['harga']),
+                'kategori' => $value['kategori'],
+                'stok' => $value['stok'],
+                'maingambar' => $value['gambar'],
+            ];
+        }
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'No data were found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
+    public function allProduct_get()
     {
         $id = $this->get('id');
         if ($id === null) {
             $produk = $this->produk->getProduct();
-            $data = $produk;
+            foreach ($produk as $value) {
+                $data[] = [
+                    'id' => $value['id'],
+                    'nama' => $value['nama'],
+                    'harga' => rupiah($value['harga']),
+                    'kategori' => $value['kategori'],
+                    'stok' => $value['stok'],
+                    'maingambar' => $value['gambar'],
+                ];
+            }
         } else {
             $produk = $this->produk->getProduct($id);
             $gambar = $this->gambar->getDataGambar($id);
@@ -34,7 +97,7 @@ class Product extends REST_Controller
                     'harga' => $value['harga'],
                     'jenis' => $value['jenis'],
                     'kategori' => $value['kategori'],
-                    'stok' => $value['id'],
+                    'stok' => $value['stok'],
                     'status' => $value['status'],
                     'berat' => $value['berat'],
                     'deskripsi' => $value['deskripsi'],

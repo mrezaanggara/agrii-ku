@@ -43,11 +43,20 @@ class Dashboard extends REST_Controller
     public function kategori_get()
     {
         $kategori = $this->kategori->getKategori();
+        foreach ($kategori as $value) {
+            if ($value['status'] == 1) {
+                $data[] = [
+                    'id' => $value['id'],
+                    'kategori' => $value['kategori'],
+                    'status' => $value['status'],
+                ];
+            }
+        }
 
-        if ($kategori) {
+        if ($data) {
             $this->response([
                 'status' => true,
-                'data' => $kategori
+                'data' => $data
             ], REST_Controller::HTTP_OK);
         } else {
             $this->response([
@@ -60,11 +69,20 @@ class Dashboard extends REST_Controller
     public function jenis_get()
     {
         $jenis = $this->jenis->getJenis();
+        foreach ($jenis as $value) {
+            if ($value['status'] == 1) {
+                $data[] = [
+                    'id' => $value['id'],
+                    'jenis' => $value['jenis'],
+                    'status' => $value['status'],
+                ];
+            }
+        }
 
-        if ($jenis) {
+        if ($data) {
             $this->response([
                 'status' => true,
-                'data' => $jenis
+                'data' => $data
             ], REST_Controller::HTTP_OK);
         } else {
             $this->response([

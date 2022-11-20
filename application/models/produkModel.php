@@ -23,6 +23,7 @@ class produkModel extends CI_Model
             $this->db->where('produk.jenis=jenis.id');
             $this->db->where('produk.kategori=kategori.id');
             $this->db->where('gambar.id_produk=produk.id');
+            $this->db->group_by('produk.id');
             return $this->db->get()->result_array();
         }
     }

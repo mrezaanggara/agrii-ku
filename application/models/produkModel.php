@@ -14,13 +14,15 @@ class produkModel extends CI_Model
             $this->db->group_by('produk.id');
             return $this->db->get()->result_array();
         } else {
-            $this->db->select('*, produk.id as id_produk');
+            $this->db->select('*, gambar.gambar');
             $this->db->from('produk');
             $this->db->from('kategori');
             $this->db->from('jenis');
-            $this->db->where('produk.kategori=kategori.id');
-            $this->db->where('produk.jenis=jenis.id');
+            $this->db->from('gambar');
             $this->db->where("produk.id ='" . $id . "'");
+            $this->db->where('produk.jenis=jenis.id');
+            $this->db->where('produk.kategori=kategori.id');
+            $this->db->where('gambar.id_produk=produk.id');
             return $this->db->get()->result_array();
         }
     }

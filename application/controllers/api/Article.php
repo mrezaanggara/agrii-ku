@@ -20,14 +20,29 @@ class Article extends REST_Controller
         $id = $this->get('id');
         if ($id === null) {
             $artikel = $this->artikel->getArticle();
+            foreach ($artikel as $value) {
+                $data[] = [
+                    'id' => $value['id'],
+                    'title' => $value['title'],
+                    'tanggal' => formatTanggal($value['created_at']),
+                ];
+            }
         } else {
             $artikel = $this->artikel->getArticle($id);
+            foreach ($artikel as $value) {
+                $data = [
+                    'id' => $value['id'],
+                    'title' => $value['title'],
+                    'content' => $value['content'],
+                    'tanggal' => formatTanggal($value['created_at']),
+                ];
+            }
         }
 
         if ($artikel) {
             $this->response([
                 'status' => true,
-                'data' => $artikel
+                'data' => $data
             ], REST_Controller::HTTP_OK);
         } else {
             $this->response([

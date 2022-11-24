@@ -78,28 +78,40 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <div class="slide-container swiper">
-                        <div class="slide-content-kategori">
-                            <div class="card-wrapper swiper-wrapper">
-                                <?php foreach ($jenis as $jenis) : ?>
-                                    <?php if ($jenis['status'] != 0) { ?>
-                                        <div class="swiper-slide">
-                                            <a href="<?php echo base_url('catalogue/jenis/') . $jenis['jenis']; ?>" class="kategori text-white rounded" type="button"><?= $jenis['jenis']; ?></a>
-                                        </div>
-                                    <?php } ?>
-                                <?php endforeach; ?>
-                                <?php foreach ($kategori as $kategori) : ?>
-                                    <?php if ($kategori['status'] != 0) { ?>
-                                        <div class="swiper-slide">
-                                            <a href="<?php echo base_url('catalogue/category/') . $kategori['kategori']; ?>" class="kategori text-white rounded" type="button"><?= $kategori['kategori']; ?></a>
-                                        </div>
-                                    <?php } ?>
-                                <?php endforeach; ?>
+                    <div class="col">
+                        <h5 class="h5 mb-2 text-gray-900 bold font-weight-bold">Kategori dan Jenis</h5>
+                        <br>
+                        <div class="slide-container swiper">
+                            <div class="slide-content-kategori">
+                                <div class="card-wrapper swiper-wrapper">
+                                    <?php foreach ($kategori as $kategori) : ?>
+                                        <?php if ($kategori['status'] != 0) { ?>
+                                            <div class="swiper-slide">
+                                                <a href="<?php echo base_url('catalogue/category/') . $kategori['kategori']; ?>" class="kategori text-white rounded" type="button"><?= $kategori['kategori']; ?></a>
+                                            </div>
+                                        <?php } ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="swiper-button-next swiper-pb"></div>
+                                <div class="swiper-button-prev swiper-pb"></div>
                             </div>
-                            <div class="swiper-button-next swiper-pb"></div>
-                            <div class="swiper-button-prev swiper-pb"></div>
                         </div>
-
+                        <br>
+                        <div class="slide-container swiper">
+                            <div class="slide-content-kategori">
+                                <div class="card-wrapper swiper-wrapper">
+                                    <?php foreach ($jenis as $jenis) : ?>
+                                        <?php if ($jenis['status'] != 0) { ?>
+                                            <div class="swiper-slide">
+                                                <a href="<?php echo base_url('catalogue/jenis/') . $jenis['jenis']; ?>" class="kategori text-white rounded" type="button"><?= $jenis['jenis']; ?></a>
+                                            </div>
+                                        <?php } ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="swiper-button-next swiper-pb"></div>
+                                <div class="swiper-button-prev swiper-pb"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,35 +245,30 @@
         </div>
         <!-- end swiper produk terlaris -->
 
-        <br>
-        <br>
+        <div class="container">
+            <hr class="divider">
+        </div>
 
         <!-- cara pemesanan -->
         <div class="container">
             <h5 class="h5 mb-2 text-gray-900 bold text-center font-weight-bold">Cara Pemesanan</h5>
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="col-md-3">
                     <div class="row d-flex justify-content-around align-items-center">
-                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
-                        <a class="text-gray-900">Mencari Produk</a>
+                        <img src="<?php echo site_url('data/images/pemesanan/pesanan1.png') ?>" alt="" height="300">
+                        <a class="text-gray-900 font-weight-bold">Mencari Produk</a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="row  d-flex justify-content-around align-items-center">
-                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
-                        <a class="text-gray-900">Hubungi Kami</a>
+                        <img src="<?php echo site_url('data/images/pemesanan/pesanan2.png') ?>" alt="" height="300">
+                        <a class="text-gray-900 font-weight-bold">Pesan dan Bayar</a>
                     </div>
                 </div>
                 <div class="col-md-3 ">
                     <div class="row d-flex justify-content-around align-items-center">
-                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
-                        <a class="text-gray-900">Pesan dan Bayar </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="row  d-flex justify-content-around align-items-center">
-                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
-                        <a class="text-gray-900">Pengiriman</a>
+                        <img src="<?php echo site_url('data/images/pemesanan/pesanan3.png') ?>" alt="" height="300">
+                        <a class="text-gray-900 font-weight-bold">Pesanan Dikirim </a>
                     </div>
                 </div>
             </div>

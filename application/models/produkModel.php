@@ -14,7 +14,7 @@ class produkModel extends CI_Model
             $this->db->group_by('produk.id');
             return $this->db->get()->result_array();
         } else {
-            $this->db->select('*, gambar.gambar');
+            $this->db->select('*,produk.id, gambar.gambar');
             $this->db->from('produk');
             $this->db->from('kategori');
             $this->db->from('jenis');

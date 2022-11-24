@@ -72,6 +72,37 @@ class Product extends REST_Controller
         }
     }
 
+    public function semuaproduk_get()
+    {
+        $pages = $this->get('pages');
+        $row_per_pages = $this->get('limit');
+        $begin = ($pages * $row_per_pages) - $row_per_pages;
+        $produk = $this->produk->Products($begin, $row_per_pages);
+
+        foreach ($produk as $value) {
+            $data[] = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'harga' => rupiah($value['harga']),
+                'kategori' => $value['kategori'],
+                'stok' => $value['stok'],
+                'maingambar' => $value['gambar'],
+            ];
+        }
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'No data were found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
     public function allProduct_get()
     {
         $id = $this->get('id');
@@ -81,7 +112,7 @@ class Product extends REST_Controller
                 $data[] = [
                     'id' => $value['id'],
                     'nama' => $value['nama'],
-                    'harga' => rupiah($value['harga']),
+                    'harga' => $value['harga'],
                     'kategori' => $value['kategori'],
                     'stok' => $value['stok'],
                     'maingambar' => $value['gambar'],
@@ -90,10 +121,12 @@ class Product extends REST_Controller
         } else {
             $produk = $this->produk->getProduct($id);
             $gambar = $this->gambar->getDataGambar($id);
+            $this->produk->update_counter($id);
             foreach ($produk as $value) {
                 $data = [
                     'id' => $value['id'],
                     'nama' => $value['nama'],
+                    'visitor' => $value['visitor'],
                     'harga' => $value['harga'],
                     'jenis' => $value['jenis'],
                     'kategori' => $value['kategori'],

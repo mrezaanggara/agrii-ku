@@ -56,6 +56,20 @@ class produkModel extends CI_Model
         return $this->db->get()->result_array();
     }
 
+    public function Products($begin, $row_per_pages)
+    {
+        $this->db->select('produk.id,produk.nama,produk.harga,produk.kategori,produk.stok,gambar.gambar,kategori.kategori');
+        $this->db->from('produk');
+        $this->db->from('gambar');
+        $this->db->from('kategori');
+        $this->db->where('gambar.main_gambar = 1');
+        $this->db->where('produk.kategori=kategori.id');
+        $this->db->where('gambar.id_produk=produk.id');
+        $this->db->group_by('produk.id');
+        $this->db->limit($row_per_pages, $begin);
+        return $this->db->get('')->result_array();
+    }
+
     public function getProducts($limit, $start, $keyword = null)
     {
         if ($keyword) {

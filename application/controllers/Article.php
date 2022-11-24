@@ -35,4 +35,14 @@ class Article extends CI_Controller
         $data['artikel'] = $this->artikel->getArticle($id);
         $this->load->view('users/detailartikel', $data);
     }
+
+    public function mobile($id)
+    {
+        $this->load->model('artikelModel', 'artikel');
+        $data = [
+            'title' => 'Agrii-ku | Artikel',
+        ];
+        $data['artikel'] = $this->artikel->getArticle($id);
+        $this->load->view('users/mobileartikel', $data);
+    }
 }

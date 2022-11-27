@@ -103,44 +103,30 @@ class Product extends REST_Controller
         }
     }
 
-    public function allProduct_get()
+    public function detailProduct_get()
     {
         $id = $this->get('id');
-        if ($id === null) {
-            $produk = $this->produk->getProduct();
-            foreach ($produk as $value) {
-                $data[] = [
-                    'id' => $value['id'],
-                    'nama' => $value['nama'],
-                    'harga' => $value['harga'],
-                    'kategori' => $value['kategori'],
-                    'stok' => $value['stok'],
-                    'maingambar' => $value['gambar'],
-                ];
-            }
-        } else {
-            $produk = $this->produk->getProduct($id);
-            $gambar = $this->gambar->getDataGambar($id);
-            $this->produk->update_counter($id);
-            foreach ($produk as $value) {
-                $data = [
-                    'id' => $value['id'],
-                    'nama' => $value['nama'],
-                    'visitor' => $value['visitor'],
-                    'harga' => $value['harga'],
-                    'jenis' => $value['jenis'],
-                    'kategori' => $value['kategori'],
-                    'stok' => $value['stok'],
-                    'status' => $value['status'],
-                    'berat' => $value['berat'],
-                    'deskripsi' => $value['deskripsi'],
-                    'video' => $value['video'],
-                    'gambar' => $gambar,
-                    'panjang' => $value['panjang'],
-                    'lebar' => $value['lebar'],
-                    'tinggi' => $value['tinggi'],
-                ];
-            }
+        $produk = $this->produk->getProduct($id);
+        $gambar = $this->gambar->getDataGambar($id);
+        $this->produk->update_counter($id);
+        foreach ($produk as $value) {
+            $data = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'visitor' => $value['visitor'],
+                'harga' => $value['harga'],
+                'jenis' => $value['jenis'],
+                'kategori' => $value['kategori'],
+                'stok' => $value['stok'],
+                'status' => $value['status'],
+                'berat' => $value['berat'],
+                'deskripsi' => $value['deskripsi'],
+                'video' => $value['video'],
+                'gambar' => $gambar,
+                'panjang' => $value['panjang'],
+                'lebar' => $value['lebar'],
+                'tinggi' => $value['tinggi'],
+            ];
         }
 
         if ($data) {

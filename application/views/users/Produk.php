@@ -15,6 +15,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+            <br>
             <?php foreach ($produk as $produk) : ?>
                 <div class="row">
                     <div class="col-md-7" align="center">
@@ -26,7 +27,9 @@
                                 foreach ($gambar as $key => $value) {
                                     if ($key == 0) { ?>
                                         <div class="swiper-slide active">
-                                            <img src="<?php echo base_url("data/images/product/" . $value['gambar']) ?>" class="d-block w-100 rounded" height="477px">
+                                            <div class="container">
+                                                <img src="<?php echo base_url("data/images/product/" . $value['gambar']) ?>" class="rounded" height="400">
+                                            </div>
                                         </div>
                                     <?php } else { ?>
                                         <div class="swiper-slide ">

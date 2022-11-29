@@ -141,4 +141,46 @@ class Product extends REST_Controller
             ], REST_Controller::HTTP_NOT_FOUND);
         }
     }
+
+    public function updateStock_put()
+    {
+        $id = $this->put('id');
+        $data = [
+            'stok' => $this->put('stok'),
+        ];
+
+        if ($this->produk->updateProduct($data, $id) > 0) {
+            $this->response([
+                'status' => true,
+                'message' => 'data was update'
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'data was not update'
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
+    }
+
+    public function reverseStock_put()
+    {
+        $id = $this->put('id');
+        $stok = $this->produk->getStok($id)->stok;
+        $data = [
+            'stok' => $this->put('stok') + $stok,
+        ];
+
+        if ($this->produk->updateProduct($data, $id) > 0) {
+            $this->response([
+                'status' => true,
+                'data' => $data,
+                'message' => 'data was update'
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'data was not update'
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
+    }
 }

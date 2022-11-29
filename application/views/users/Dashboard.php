@@ -282,15 +282,15 @@
         <!-- mitra -->
         <div class="container">
             <h5 class="h5 mb-2 text-gray-900 bold text-center font-weight-bold">Mitra</h5>
+            <br>
             <div class="row justify-content-md-center">
-
-                <div class="col-md-3">
-                    <div class="row d-flex justify-content-around align-items-center">
-                        <img src="<?php echo site_url('data/icon.png') ?>" alt="" height="100">
-                        <a class="text-gray-900"></a>
+                <?php foreach ($mitra as $mitra) : ?>
+                    <div class="col-md-2">
+                        <div class="row d-flex justify-content-around align-items-center">
+                            <img src="<?php echo site_url('data/images/mitra/') . $mitra['mitra'] ?>" alt="" height="100">
+                        </div>
                     </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
         </div>
         <!-- end mitra -->

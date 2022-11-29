@@ -17,6 +17,7 @@ class Dashboard extends CI_Controller
 		$this->load->model('jenisModel', 'jenis');
 		$this->load->model('kategoriModel', 'kategori');
 		$this->load->model('produkModel', 'produk');
+		$this->load->model('mitraModel', 'mitra');
 		$data = [
 			'title' => 'Agrii-ku | Dashboard',
 		];
@@ -25,6 +26,7 @@ class Dashboard extends CI_Controller
 		$data['kategori'] = $this->kategori->getKategori();
 		$data['produk'] = $this->produk->newProduct();
 		$data['dilihat'] = $this->produk->mostViewProduct();
+		$data['mitra'] = $this->mitra->getMitra();
 		$this->load->view('users/dashboard', $data);
 	}
 }

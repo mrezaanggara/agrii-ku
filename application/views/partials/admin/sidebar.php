@@ -55,6 +55,7 @@
                 <a class="collapse-item" href="<?php echo site_url('admin/carousel') ?>">Carousel</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/artikel') ?>">Artikel</a>
                 <a class="collapse-item" href="<?php echo site_url('admin/aboutus') ?>">About us</a>
+                <a class="collapse-item" href="<?php echo site_url('admin/mitra') ?>">Mitra</a>
             </div>
         </div>
     </li>

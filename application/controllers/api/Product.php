@@ -183,4 +183,100 @@ class Product extends REST_Controller
             ], REST_Controller::HTTP_BAD_REQUEST);
         }
     }
+
+    public function search_get()
+    {
+        $pages = $this->get('pages');
+        $keyword = $this->get('keyword');
+        $row_per_pages = $this->get('limit');
+        $begin = ($pages * $row_per_pages) - $row_per_pages;
+        $produk = $this->produk->getProducts($row_per_pages, $begin, $keyword);
+
+        foreach ($produk as $value) {
+            $data[] = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'harga' => rupiah($value['harga']),
+                'kategori' => $value['kategori'],
+                'stok' => $value['stok'],
+                'maingambar' => $value['gambar'],
+            ];
+        }
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'No data were found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
+    public function byCategory_get()
+    {
+        $pages = $this->get('pages');
+        $keyword = $this->get('keyword');
+        $row_per_pages = $this->get('limit');
+        $begin = ($pages * $row_per_pages) - $row_per_pages;
+        $produk = $this->produk->productCategories($row_per_pages, $begin, $keyword);
+
+        foreach ($produk as $value) {
+            $data[] = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'harga' => rupiah($value['harga']),
+                'kategori' => $value['kategori'],
+                'stok' => $value['stok'],
+                'maingambar' => $value['gambar'],
+            ];
+        }
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'No data were found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
+
+    public function byJenis_get()
+    {
+        $pages = $this->get('pages');
+        $keyword = $this->get('keyword');
+        $row_per_pages = $this->get('limit');
+        $begin = ($pages * $row_per_pages) - $row_per_pages;
+        $produk = $this->produk->productJenis($row_per_pages, $begin, $keyword);
+
+        foreach ($produk as $value) {
+            $data[] = [
+                'id' => $value['id'],
+                'nama' => $value['nama'],
+                'harga' => rupiah($value['harga']),
+                'jenis' => $value['jenis'],
+                'stok' => $value['stok'],
+                'maingambar' => $value['gambar'],
+            ];
+        }
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], REST_Controller::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'No data were found'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }
+    }
 }

@@ -14,4 +14,14 @@ class About_us extends CI_Controller
         $data['sosmed'] = $this->sosmed->getSosmed();
         $this->load->view('users/about-us', $data);
     }
+
+    public function mobile()
+    {
+        $this->load->model('aboutModel', 'about');
+        $data = [
+            'title' => 'Agrii-ku | About',
+        ];
+        $data['about'] = $this->about->getAbout();
+        $this->load->view('users/mobileaboutus', $data);
+    }
 }

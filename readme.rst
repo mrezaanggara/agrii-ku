@@ -22,3 +22,8 @@ Rest API Library by Chriscerguis,
 PHP version 5.6 or newer is recommended.
 
 
+*******************
+NOTE install!!!
+*******************
+-setting base_url di application/config.php -> $config[base_url]
+-setting Database di application/database.php

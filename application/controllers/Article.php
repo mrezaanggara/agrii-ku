@@ -11,7 +11,7 @@ class Article extends CI_Controller
         $this->load->library('pagination');
 
         //config
-        $config['base_url'] = 'http://localhost/agrii-ku/article/index';
+        $config['base_url'] = base_url('article/index');
         $config['total_rows'] = $this->artikel->countArticle();
         $config['per_page'] = 5;
 

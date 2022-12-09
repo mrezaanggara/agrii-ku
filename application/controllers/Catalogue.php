@@ -10,7 +10,7 @@ class Catalogue extends CI_Controller
         $this->load->library('pagination');
 
         //config
-        $config['base_url'] = 'http://localhost/agrii-ku/catalogue/allproduct';
+        $config['base_url'] = base_url('catalogue/allproduct');
         $config['total_rows'] = $this->produk->countProducts();
         $config['per_page'] = 10;
 
@@ -41,7 +41,7 @@ class Catalogue extends CI_Controller
         $data['keyword'] = $category;
 
         //config
-        $config['base_url'] = 'http://localhost/agrii-ku/catalogue/category/' . $category;
+        $config['base_url'] = base_url('catalogue/category/') . $category;
         $this->db->like('kategori.kategori', $data['keyword']);
         $this->db->from('produk');
         $this->db->from('kategori');
@@ -71,7 +71,7 @@ class Catalogue extends CI_Controller
         $data['keyword'] = $jenis;
 
         //config
-        $config['base_url'] = 'http://localhost/agrii-ku/catalogue/jenis/' . $jenis;
+        $config['base_url'] = base_url('catalogue/jenis/') . $jenis;
         $this->db->like('jenis.jenis', $data['keyword']);
         $this->db->from('produk');
         $this->db->from('jenis');
@@ -109,7 +109,7 @@ class Catalogue extends CI_Controller
         }
 
         //config
-        $config['base_url'] = 'http://localhost/agrii-ku/catalogue/search';
+        $config['base_url'] = base_url('catalogue/search');
         $this->db->like('produk.nama', $data['keyword']);
         // $this->db->or_like('kategori.kategori', $data['keyword']);
         $this->db->from('produk');

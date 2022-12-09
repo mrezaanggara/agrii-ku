@@ -11,6 +11,7 @@ class Product extends REST_Controller
 {
     public function __construct()
     {
+        header('Access-Control-Allow-Origin: *');
         parent::__construct();
         $this->load->model('produkModel', 'produk');
         $this->load->model('gambarModel', 'gambar');

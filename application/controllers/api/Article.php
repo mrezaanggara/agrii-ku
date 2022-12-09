@@ -11,6 +11,7 @@ class Article extends REST_Controller
 {
     public function __construct()
     {
+        header('Access-Control-Allow-Origin: *');
         parent::__construct();
         $this->load->model('artikelModel', 'artikel');
     }

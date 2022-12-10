@@ -25,7 +25,18 @@
     font-size: 16px;
     color: white;
     padding: 6px 14px;
-    background-color: #248b3c;
+    background-color: #529037;
+}
+
+.jenis{
+    text-align: center;
+    height: auto;
+    width: 140px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    padding: 6px 14px;
+    background-color: #80a571;
 }
 
 .card-content{

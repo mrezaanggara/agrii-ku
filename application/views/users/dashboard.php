@@ -79,7 +79,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="col">
-                        <h5 class="h5 mb-2 text-gray-900 bold font-weight-bold">Kategori dan Jenis</h5>
+                        <h5 class="h5 mb-2 text-gray-900 bold font-weight-bold text-center">Kategori</h5>
                         <br>
                         <div class="slide-container swiper">
                             <div class="slide-content-kategori">
@@ -97,13 +97,15 @@
                             </div>
                         </div>
                         <br>
+                        <h5 class="h5 mb-2 text-gray-900 bold font-weight-bold text-center">Jenis</h5>
+                        <br>
                         <div class="slide-container swiper">
                             <div class="slide-content-kategori">
                                 <div class="card-wrapper swiper-wrapper">
                                     <?php foreach ($jenis as $jenis) : ?>
                                         <?php if ($jenis['status'] != 0) { ?>
                                             <div class="swiper-slide">
-                                                <a href="<?php echo base_url('catalogue/jenis/') . $jenis['jenis']; ?>" class="kategori text-white rounded" type="button"><?= $jenis['jenis']; ?></a>
+                                                <a href="<?php echo base_url('catalogue/jenis/') . $jenis['jenis']; ?>" class="jenis text-white rounded" type="button"><?= $jenis['jenis']; ?></a>
                                             </div>
                                         <?php } ?>
                                     <?php endforeach; ?>

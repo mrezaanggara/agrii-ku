@@ -38,7 +38,7 @@ class Catalogue extends CI_Controller
         $this->load->library('pagination');
 
         //ambil data kategori
-        $data['keyword'] = $category;
+        $data['keyword'] = str_replace('%20', ' ', $category);
 
         //config
         $config['base_url'] = base_url('catalogue/category/') . $category;
@@ -68,7 +68,7 @@ class Catalogue extends CI_Controller
         $this->load->library('pagination');
 
         //ambil data kategori
-        $data['keyword'] = $jenis;
+        $data['keyword'] = str_replace('%20', ' ', $jenis);
 
         //config
         $config['base_url'] = base_url('catalogue/jenis/') . $jenis;

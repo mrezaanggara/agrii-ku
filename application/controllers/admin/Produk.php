@@ -224,23 +224,15 @@ class Produk extends CI_Controller
             parse_str($url_components['query'], $params);
             $link = $params['v'];
         }
-        if ($this->form_validation->run() == TRUE) {
-
-            $data = array(
-                'video' => $link,
-                'updated_at' => (new DateTime('now'))->format('Y-m-d H:i:s'),
-            );
-            if ($this->produkModel->updateProduct($data, $id)) {
-                echo "<script>
-                alert('Data berhasil diubah!');
-                window.location='" . site_url('admin/produk/detailproduct/' . $id) . "';
-            </script>";
-            }
-        } else {
+        $data = array(
+            'video' => $link,
+            'updated_at' => (new DateTime('now'))->format('Y-m-d H:i:s'),
+        );
+        if ($this->produkModel->updateProduct($data, $id)) {
             echo "<script>
-                alert('Form harus Dilengkapi');
-                window.location='" . site_url('admin/produk/detailproduct/' . $id) . "';
-            </script>";
+            alert('Data berhasil diubah!');
+            window.location='" . site_url('admin/produk/detailproduct/' . $id) . "';
+        </script>";
         }
     }
 

@@ -64,9 +64,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="embed-responsive embed-responsive-16by9 rounded">
-                                                        <iframe src="https://www.youtube.com/embed/<?= $produk['video']; ?>" title="YouTube video" allowfullscreen></iframe>
-                                                    </div>
+                                                    <?php if ($produk['video'] == '-') { ?>
+                                                        <div class="text-center">
+                                                            Video belum ada
+                                                        </div>
+                                                    <?php } else { ?>
+                                                        <div class="embed-responsive embed-responsive-16by9 rounded">
+                                                            <iframe src="https://www.youtube.com/embed/<?= $produk['video']; ?>" title="YouTube video" allowfullscreen></iframe>
+                                                        </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>

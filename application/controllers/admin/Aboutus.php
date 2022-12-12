@@ -9,7 +9,7 @@ class Aboutus extends CI_Controller
         $this->load->model('aboutModel');
         $this->load->model('sosmedModel', 'sosmed');
         $data = [
-            'title' => 'Edit About us | Agrii-ku',
+            'title' => 'Edit About us | Agriiku',
         ];
         $data['about'] = $this->aboutModel->getAbout();
         $data['sosmed'] = $this->sosmed->getSosmed();

@@ -8,7 +8,7 @@ class Mitra extends CI_Controller
         check_not_login();
         $this->load->model('mitraModel');
         $data = [
-            'title' => 'Mitra | Agrii-ku',
+            'title' => 'Mitra | Agriiku',
         ];
         $data['mitra'] = $this->mitraModel->getMitra();
         $this->load->view('admin/mitra', $data);

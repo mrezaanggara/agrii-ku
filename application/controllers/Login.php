@@ -6,7 +6,7 @@ class Login extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Login | Agrii-ku',
+            'title' => 'Login | Agriiku',
         ];
         check_already_login();
         $this->load->view('admin/login', $data);

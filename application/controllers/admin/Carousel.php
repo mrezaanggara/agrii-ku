@@ -8,7 +8,7 @@ class Carousel extends CI_Controller
         check_not_login();
         $this->load->model('carouselModel');
         $data = [
-            'title' => 'Carousel | Agrii-ku',
+            'title' => 'Carousel | Agriiku',
         ];
         $data['carousel'] = $this->carouselModel->getCarousel();
         $this->load->view('admin/carousel/listcarousel', $data);

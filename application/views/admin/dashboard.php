@@ -22,7 +22,7 @@
 
                 <!--content -->
                 <div class="container-fluid">
-                    <h1 class="h4 mb-4 text-gray-800">Selamat datang, ...... di halaman admin Agrii-ku</h2>
+                    <h1 class="h4 mb-4 text-gray-800">Selamat datang, ...... di halaman admin Agriiku</h2>
                 </div>
 
             </div>

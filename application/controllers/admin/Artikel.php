@@ -8,7 +8,7 @@ class Artikel extends CI_Controller
         check_not_login();
         $this->load->model('artikelModel', 'artikel');
         $data = [
-            'title' => 'Daftar Artikel | Agrii-ku',
+            'title' => 'Daftar Artikel | Agriiku',
         ];
         $data['artikel'] = $this->artikel->getArticle();
         $this->load->view('admin/artikel/listartikel', $data);
@@ -41,7 +41,7 @@ class Artikel extends CI_Controller
 
         $this->load->model('artikelModel', 'artikel');
         $data = [
-            'title' => 'Edit Artikel | Agrii-ku',
+            'title' => 'Edit Artikel | Agriiku',
         ];
         $data['artikel'] = $this->artikel->getArticle($id);
         $this->load->view('admin/artikel/editartikel', $data);

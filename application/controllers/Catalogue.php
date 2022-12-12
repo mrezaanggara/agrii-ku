@@ -18,7 +18,7 @@ class Catalogue extends CI_Controller
         $this->pagination->initialize($config);
 
         $data = [
-            'title' => 'Agrii-ku | Katalog',
+            'title' => 'Agriiku | Katalog',
             'laman' => 'Semua Produk',
         ];
         $data['keyword'] = null;
@@ -30,7 +30,7 @@ class Catalogue extends CI_Controller
     public function category($category)
     {
         $data = [
-            'title' => 'Agrii-ku | Categories',
+            'title' => 'Agriiku | Categories',
             'laman' => 'Kategori Produk',
         ];
         $this->load->model('produkModel', 'produk');
@@ -60,7 +60,7 @@ class Catalogue extends CI_Controller
     public function jenis($jenis)
     {
         $data = [
-            'title' => 'Agrii-ku | Jenis',
+            'title' => 'Agriiku | Jenis',
             'laman' => 'Jenis Produk',
         ];
         $this->load->model('produkModel', 'produk');
@@ -90,7 +90,7 @@ class Catalogue extends CI_Controller
     public function search()
     {
         $data = [
-            'title' => 'Agrii-ku | Search Product',
+            'title' => 'Agriiku | Search Product',
             'laman' => 'Pencarian Produk',
         ];
         $this->load->model('produkModel', 'produk');
@@ -130,7 +130,7 @@ class Catalogue extends CI_Controller
         $this->load->model('produkModel', 'produk');
         $this->load->model('gambarModel', 'gambar');
         $data = [
-            'title' => 'Agrii-ku | Katalog',
+            'title' => 'Agriiku | Katalog',
         ];
         $data['produk'] = $this->produk->getProduct($id);
         $data['gambar'] = $this->gambar->getDataGambar($id);

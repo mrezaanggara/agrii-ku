@@ -8,7 +8,7 @@ class Produk extends CI_Controller
         check_not_login();
         $this->load->model('produkModel');
         $data = [
-            'title' => 'Daftar Produk | Agrii-ku',
+            'title' => 'Daftar Produk | Agriiku',
         ];
         $data['produk'] = $this->produkModel->getProduct();
         $this->load->view('admin/produk/listproduk', $data);
@@ -92,7 +92,7 @@ class Produk extends CI_Controller
         }
 
         $data = [
-            'title' => 'Tambah Produk | Agrii-ku',
+            'title' => 'Tambah Produk | Agriiku',
         ];
 
         $this->load->model('kategoriModel');
@@ -124,7 +124,7 @@ class Produk extends CI_Controller
         $this->load->model('kategoriModel');
         $this->load->model('jenisModel');
         $data = [
-            'title' => 'Detail Produk | Agrii-ku',
+            'title' => 'Detail Produk | Agriiku',
         ];
         $data['produk'] = $this->produkModel->getProduct($id);
         $data['gambar'] = $this->gambarModel->getDataGambar($id);
@@ -297,7 +297,7 @@ class Produk extends CI_Controller
         check_not_login();
         $this->load->model('jenisModel');
         $data = [
-            'title' => 'Jenis Produk | Agrii-ku',
+            'title' => 'Jenis Produk | Agriiku',
         ];
         $data['jenis'] = $this->jenisModel->getJenis();
         $this->load->view('admin/produk/jenisproduk', $data);
@@ -356,7 +356,7 @@ class Produk extends CI_Controller
         check_not_login();
         $this->load->model('kategoriModel');
         $data = [
-            'title' => 'Kategori Produk | Agrii-ku',
+            'title' => 'Kategori Produk | Agriiku',
         ];
         $data['kategori'] = $this->kategoriModel->getKategori();
         $this->load->view('admin/produk/kategoriproduk', $data);

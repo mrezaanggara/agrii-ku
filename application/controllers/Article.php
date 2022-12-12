@@ -19,7 +19,7 @@ class Article extends CI_Controller
         $this->pagination->initialize($config);
 
         $data = [
-            'title' => 'Agrii-ku | Artikel',
+            'title' => 'Agriiku | Artikel',
         ];
         $data['start'] = $this->uri->segment(3);
         $data['artikel'] = $this->artikel->getArticles($config['per_page'], $data['start']);
@@ -30,7 +30,7 @@ class Article extends CI_Controller
     {
         $this->load->model('artikelModel', 'artikel');
         $data = [
-            'title' => 'Agrii-ku | Artikel',
+            'title' => 'Agriiku | Artikel',
         ];
         $data['artikel'] = $this->artikel->getArticle($id);
         $this->load->view('users/detailartikel', $data);
@@ -40,7 +40,7 @@ class Article extends CI_Controller
     {
         $this->load->model('artikelModel', 'artikel');
         $data = [
-            'title' => 'Agrii-ku | Artikel',
+            'title' => 'Agriiku | Artikel',
         ];
         $data['artikel'] = $this->artikel->getArticle($id);
         $this->load->view('users/mobileartikel', $data);

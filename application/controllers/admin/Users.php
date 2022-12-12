@@ -8,7 +8,7 @@ class Users extends CI_Controller
         check_not_login();
         $this->load->model('usersModel', 'users');
         $data = [
-            'title' => 'Daftar Artikel | Agrii-ku',
+            'title' => 'Daftar Artikel | Agriiku',
         ];
         $data['users'] = $this->users->getUsers();
         $this->load->view('admin/users/listadmin', $data);
@@ -38,7 +38,7 @@ class Users extends CI_Controller
         }
 
         $data = [
-            'title' => 'Tambah Admin | Agrii-ku',
+            'title' => 'Tambah Admin | Agriiku',
         ];
         $this->load->view('admin/users/tambahadmin', $data);
     }

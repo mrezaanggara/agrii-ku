@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller
 	public function index()
 	{
 		$data = [
-			'title' => 'Agrii-ku',
+			'title' => 'Agriiku',
 		];
 		$this->load->view('splashscreen', $data);
 	}
@@ -19,7 +19,7 @@ class Dashboard extends CI_Controller
 		$this->load->model('produkModel', 'produk');
 		$this->load->model('mitraModel', 'mitra');
 		$data = [
-			'title' => 'Agrii-ku | Dashboard',
+			'title' => 'Agriiku | Dashboard',
 		];
 		$data['carousel'] = $this->carousel->getCarousel();
 		$data['jenis'] = $this->jenis->getJenis();

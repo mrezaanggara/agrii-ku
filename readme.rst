@@ -1,5 +1,5 @@
 ###################
-Agrii-ku E-Commerce
+Agriiku E-Commerce
 ###################
 
 Sistem Informasi E-Commerce yang berfokus pada

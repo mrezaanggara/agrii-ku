@@ -6,7 +6,7 @@ class Keranjang extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Agrii-ku | Keranjang',
+            'title' => 'Agriiku | Keranjang',
         ];
         $this->load->view('users/keranjang', $data);
     }

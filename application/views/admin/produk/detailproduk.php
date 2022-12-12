@@ -352,7 +352,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="fa-brands fa-youtube"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="video" placeholder="link Youtube video baru" required>
+                                                    <input type="text" class="form-control" name="video" placeholder="link Youtube video baru">
                                                 </div>
                                             </div>
                                         </div>

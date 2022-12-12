@@ -217,13 +217,13 @@ class Produk extends CI_Controller
         $this->load->model('produkModel');
         $id = $this->input->post('id');
         $url = $this->input->post('video');
-        $url_components = parse_url($url);
-        parse_str($url_components['query'], $params);
-        $link = $params['v'];
-
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('video', 'video', 'required');
+        if ($url == null) {
+            $link = '-';
+        } else {
+            $url_components = parse_url($url);
+            parse_str($url_components['query'], $params);
+            $link = $params['v'];
+        }
         if ($this->form_validation->run() == TRUE) {
 
             $data = array(

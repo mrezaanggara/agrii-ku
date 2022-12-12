@@ -66,7 +66,7 @@ class Produk extends CI_Controller
                     $files = $_FILES['gambar'];
                     $config['upload_path'] = './data/images/product/';
                     $config['allowed_types'] = 'jpg|png|jpeg|pdf|docs';
-                    $config['max_size'] = '3500';
+                    $config['max_size'] = '5500';
                     $this->load->library('upload', $config);
 
                     for ($i = 0; $i < $total; $i++) {
@@ -268,7 +268,7 @@ class Produk extends CI_Controller
             $files = $_FILES['gambar'];
             $config['upload_path'] = './data/images/product/';
             $config['allowed_types'] = 'jpg|png|jpeg|pdf|docs';
-            $config['max_size'] = '3500';
+            $config['max_size'] = '5500';
             $this->load->library('upload', $config);
 
             for ($i = 0; $i < $total; $i++) {

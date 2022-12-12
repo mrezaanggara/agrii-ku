@@ -35,9 +35,13 @@ class Produk extends CI_Controller
 
         if ($this->form_validation->run() == TRUE) {
             $url = $this->input->post('video');
-            $url_components = parse_url($url);
-            parse_str($url_components['query'], $params);
-            $link = $params['v'];
+            if ($url == null) {
+                $link = '-';
+            } else {
+                $url_components = parse_url($url);
+                parse_str($url_components['query'], $params);
+                $link = $params['v'];
+            }
 
             $data = array(
                 'nama' => $this->input->post('namaProduk'),

@@ -154,7 +154,7 @@
                                         <div class="price">
                                             <?= rupiah($produk['harga']); ?>
                                         </div>
-                                        <hr>
+                                        <hr style="margin-top: 1px;">
                                     </a>
                                     <div class="row d-flex justify-content-around align-items-center">
                                         <?php if ($produk['stok'] != 0) { ?>
@@ -218,7 +218,7 @@
                                         <div class="price">
                                             <?= rupiah($mostproduk['harga']); ?>
                                         </div>
-                                        <hr>
+                                        <hr style="margin-top: 1px;">
                                     </a>
                                     <div class="row d-flex justify-content-around align-items-center">
                                         <?php if ($mostproduk['stok'] != 0) { ?>

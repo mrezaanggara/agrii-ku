@@ -46,7 +46,7 @@
                                     <div class="price">
                                         <?= rupiah($produk['harga']); ?>
                                     </div>
-                                    <hr>
+                                    <hr style="margin-top: 1px;">
                                 </a>
                                 <div class="row d-flex justify-content-around align-items-center">
                                     <?php if ($produk['stok'] != 0) { ?>

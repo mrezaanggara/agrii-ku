@@ -38,11 +38,13 @@
                                 <?php }
                                 }
                                 ?>
-                                <div class="swiper-slide">
-                                    <div class="embed-responsive embed-responsive-16by9 rounded">
-                                        <iframe src="https://www.youtube.com/embed/<?= $produk['video']; ?>" title="YouTube video" allowfullscreen></iframe>
+                                <?php if ($produk['video'] != '-') { ?>
+                                    <div class="swiper-slide">
+                                        <div class="embed-responsive embed-responsive-16by9 rounded">
+                                            <iframe src="https://www.youtube.com/embed/<?= $produk['video']; ?>" title="YouTube video" allowfullscreen></iframe>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php } ?>
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>

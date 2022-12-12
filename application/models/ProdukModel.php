@@ -37,6 +37,7 @@ class produkModel extends CI_Model
         $this->db->where('gambar.main_gambar = 1');
         $this->db->where('produk.kategori=kategori.id');
         $this->db->where('gambar.id_produk=produk.id');
+        $this->db->group_by('produk.id');
         $this->db->order_by("produk.created_at DESC");
         $this->db->limit(10);
         return $this->db->get()->result_array();
@@ -51,6 +52,7 @@ class produkModel extends CI_Model
         $this->db->where('gambar.main_gambar = 1');
         $this->db->where('produk.kategori=kategori.id');
         $this->db->where('gambar.id_produk=produk.id');
+        $this->db->group_by('produk.id');
         $this->db->order_by("visitor DESC");
         $this->db->limit(10);
         return $this->db->get()->result_array();

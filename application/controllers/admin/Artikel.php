@@ -67,4 +67,11 @@ class Artikel extends CI_Controller
         }
         redirect('admin/artikel');
     }
+
+    public function hapus($id)
+    {
+        $this->load->model('artikelModel', 'artikel');
+        $this->artikel->deleteArticle($id);
+        redirect('admin/artikel');
+    }
 }

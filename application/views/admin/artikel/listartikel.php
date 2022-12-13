@@ -69,7 +69,7 @@
                                                             <a type="button" href="<?php echo site_url("admin/artikel/editartikel/") . $artikel['id'] ?>" class="btn btn-sm btn-success">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
-                                                            <a type="button" class="btn btn-sm btn-danger" href="">
+                                                            <a type="button" class="btn btn-sm btn-danger" href="<?php echo site_url("admin/artikel/hapus/") . $artikel['id'] ?>">
                                                                 <i class="fas fa-trash"></i>
                                                             </a>
                                                         </td>

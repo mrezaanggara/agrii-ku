@@ -65,8 +65,9 @@ class Produk extends CI_Controller
                     $total = sizeof($upload);
                     $files = $_FILES['gambar'];
                     $config['upload_path'] = './data/images/product/';
-                    $config['allowed_types'] = 'jpg|png|jpeg|pdf|docs';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
                     $config['max_size'] = '5500';
+                    $config['encrypt_name'] = TRUE;
                     $this->load->library('upload', $config);
 
                     for ($i = 0; $i < $total; $i++) {
@@ -77,15 +78,30 @@ class Produk extends CI_Controller
                         $_FILES['gambar']['size'] = $files['size'][$i];
 
                         $this->upload->initialize($config);
+                        $this->load->library('image_lib');
 
                         if ($this->upload->do_upload('gambar')) {
-                            $data = $this->upload->data();
-                            $imageName = $data['file_name'];
+                            $gbr = $this->upload->data();
+
+                            //compress gambar
+                            $config['image_library'] = 'gd2';
+                            $config['source_image'] = './data/images/product/' . $gbr['file_name'];
+                            $config['create_thumb'] = FALSE;
+                            $config['maintain_ratio'] = true;
+                            $config['quality'] = '50%';
+                            $config['width'] = 600;
+                            $config['height'] = 400;
+                            $config['new_image'] = './data/images/product/' . $gbr['file_name'];
+                            $this->image_lib->clear();
+                            $this->image_lib->initialize($config);
+                            $this->image_lib->resize();
+
+                            $imageName = $gbr['file_name'];
                             $insert[$i]['gambar'] = $imageName;
                             $insert[$i]['id_produk'] = $id;
                         }
                     }
-                    $this->gambarModel->addGambarProduk($insert, $data['file_name']);
+                    $this->gambarModel->addGambarProduk($insert, $gbr['file_name']);
                 }
             }
             echo "<script> alert('Data Berhasil Disimpan!'); </script>";
@@ -107,10 +123,13 @@ class Produk extends CI_Controller
         $this->load->model('produkModel');
 
         if ($id != null) {
-            $data = $this->db->get_where('gambar', ['id_produk' => $id])->row();
+            $data = $this->db->get_where('gambar', ['id_produk' => $id]);
+            $imgs = $data->result_array();
             $delete = $this->produkModel->deleteProduct($id);
             if ($delete) {
-                unlink("data/images/product/" . $data->gambar);
+                foreach ($imgs as $img) {
+                    unlink("data/images/product/" . $img['gambar']);
+                }
             }
             redirect('admin/produk/');
         }
